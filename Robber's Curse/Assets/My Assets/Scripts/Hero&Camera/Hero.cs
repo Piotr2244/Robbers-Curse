@@ -5,7 +5,9 @@ public class Hero : MonoBehaviour
 {
 
     [SerializeField] float m_speed = 4.0f;
-    [SerializeField] float m_jumpForce = 7.5f;
+    [SerializeField] float m_jumpForce = 8.5f;
+    [SerializeField] float health = 5.0f;
+    [SerializeField] float damage = 2.0f;
 
     private Animator m_animator;
     private Rigidbody2D m_body2d;
@@ -13,6 +15,10 @@ public class Hero : MonoBehaviour
     private bool m_grounded = false;
     private bool m_combatIdle = false;
     private bool m_isDead = false;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
 
     // Use this for initialization
     void Start()
@@ -54,19 +60,35 @@ public class Hero : MonoBehaviour
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
 
-        // -- Handle Animations --
-
-        //Hurt
 
         //Attack
         if (Input.GetMouseButtonDown(0))
         {
             m_animator.SetTrigger("Attack");
+            Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            foreach (Collider2D enemi in HitEnemies)
+            {
+
+            }
         }
 
         //Change between idle and combat idle
         else if (Input.GetKeyDown("f"))
+        {
             m_combatIdle = !m_combatIdle;
+            if (!m_combatIdle)
+            {
+                m_speed += 2.0f;
+                damage -= 1.0f;
+                m_jumpForce += 1.5f;
+            }
+            if (m_combatIdle)
+            {
+                m_speed -= 2.0f;
+                damage += 1.0f;
+                m_jumpForce -= 1.5f;
+            }
+        }
 
         //Jump
         else if (Input.GetKeyDown("space") && m_grounded)
