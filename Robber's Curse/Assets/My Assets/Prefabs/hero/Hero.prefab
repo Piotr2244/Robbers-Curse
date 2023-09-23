@@ -148,11 +148,11 @@ MonoBehaviour:
   m_jumpForce: 8
   health: 5
   damage: 2
-  attackPoint: {fileID: 920792435844188735}
   attackRange: 0.5
+  attackPoint: {fileID: 920792435844188735}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!70 &236568824
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,9 +180,9 @@ GameObject:
   - component: {fileID: 4269114208525818}
   - component: {fileID: 114926350374723154}
   - component: {fileID: 61368513597639598}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundSensor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920792435844188735}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

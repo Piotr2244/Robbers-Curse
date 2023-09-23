@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Hero : MonoBehaviour
 {
 
     [SerializeField] float m_speed = 4.0f;
     [SerializeField] float m_jumpForce = 8.5f;
-    [SerializeField] float health = 5.0f;
+    [SerializeField] float health = 20.0f;
     [SerializeField] float damage = 2.0f;
+    public float attackRange = 0.5f;
 
-    private Animator m_animator;
-    private Rigidbody2D m_body2d;
-    private Sensor_Bandit m_groundSensor;
     private bool m_grounded = false;
     private bool m_combatIdle = false;
     private bool m_isDead = false;
+    private bool isAttacking = false;
 
     public Transform attackPoint;
-    public float attackRange = 0.5f;
+    private Animator m_animator;
+    private Rigidbody2D m_body2d;
+    private Sensor_Bandit m_groundSensor;
     public LayerMask enemyLayers;
 
-    // Use this for initialization
+    //particles:
+    public ParticleSystem blood;
     void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -31,20 +34,36 @@ public class Hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        if (health <= 0)
+            m_animator.SetBool("Death", true);
+        else
+        {
+            groundHero();
+            moveHero();
+            meleeAttack();
+        }
+
+    }
+
+    private void groundHero()
+    {
         //Check if character just landed on the ground
         if (!m_grounded && m_groundSensor.State())
         {
             m_grounded = true;
             m_animator.SetBool("Grounded", m_grounded);
         }
-
         //Check if character just started falling
         if (m_grounded && !m_groundSensor.State())
         {
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
         }
-
+    }
+    private void moveHero()
+    {
         // -- Handle input and movement --
         float inputX = Input.GetAxis("Horizontal");
 
@@ -62,18 +81,10 @@ public class Hero : MonoBehaviour
 
 
         //Attack
-        if (Input.GetMouseButtonDown(0))
-        {
-            m_animator.SetTrigger("Attack");
-            Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-            foreach (Collider2D enemi in HitEnemies)
-            {
 
-            }
-        }
 
         //Change between idle and combat idle
-        else if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("f"))
         {
             m_combatIdle = !m_combatIdle;
             if (!m_combatIdle)
@@ -112,4 +123,44 @@ public class Hero : MonoBehaviour
         else
             m_animator.SetInteger("AnimState", 0);
     }
+
+    private void meleeAttack()
+    {
+        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        {
+            StartCoroutine(MeleeAttackCoroutine());
+        }
+    }
+
+    private IEnumerator MeleeAttackCoroutine()
+    {
+        isAttacking = true;
+        m_animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
+
+        Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in HitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(damage);
+        }
+
+        isAttacking = false;
+    }
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        blood.Play();
+    }
+
+
 }

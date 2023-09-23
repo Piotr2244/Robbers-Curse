@@ -10,20 +10,24 @@ public class Enemy : MonoBehaviour
     protected float jumpForce;
     protected float health;
     protected float damage;
+    protected bool isAlive = true;
+    [SerializeField] protected float attackRange;
+    [SerializeField] protected float attackSpeed; // the lower speed, the faster attacks, works like a delay between attacks
+
     protected bool isAttacking = false;
+    private bool canAttack = true;
     [SerializeField] float maxLeft;
     [SerializeField] float maxRight;
     [SerializeField] bool moveRight;
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected LayerMask playerLayer;
 
+    public LayerMask playerLayer;
     protected Animator animator;
     protected Rigidbody2D body2d;
-
-    private bool originalDirection = true;
-
+    public Transform attackPoint;
 
 
+    //particles:
+    public ParticleSystem blood;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,18 +42,27 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    //Enemy Types:
-
     //moves from left to right and does melee attacks
     protected void CasualEnemy()
     {
-        if (PlayerInRange())
-            Attack();
+        if (isAlive)
+        {
+            StillAlive();
+            if (PlayerInRange())
+                Attack();
+            else
+            {
+                isAttacking = false;
+                movingLeftRight();
+            }
+        }
         else
         {
-            isAttacking = false;
-            movingLeftRight();
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
         }
+
+
     }
     protected void movingLeftRight()
     {
@@ -104,5 +117,45 @@ public class Enemy : MonoBehaviour
         {
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
+        if (canAttack)
+            StartCoroutine(MeleeAttackCoroutine(attackSpeed));
+
     }
+    public void TakeDamage(float damage)
+    {
+        blood.Play();
+        health -= damage;
+    }
+    protected void StillAlive()
+    {
+        if (health <= 0)
+            isAlive = false;
+    }
+
+    private IEnumerator MeleeAttackCoroutine(float delay)
+    {
+        canAttack = false;
+        isAttacking = true;
+        yield return new WaitForSeconds(delay);
+
+        Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
+        foreach (Collider2D enemy in HitEnemies)
+        {
+            enemy.GetComponent<Hero>().TakeDamage(damage);
+        }
+
+        isAttacking = false;
+        canAttack = true;
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
 }
+
