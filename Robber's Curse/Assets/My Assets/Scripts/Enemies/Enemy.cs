@@ -58,8 +58,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            GetComponent<Rigidbody2D>().isKinematic = false;
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            Death();
         }
 
 
@@ -155,6 +154,19 @@ public class Enemy : MonoBehaviour
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    private void Death()
+    {
+        GetComponent<Rigidbody2D>().isKinematic = false;
+        try
+        {
+            GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+        catch
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
 }
