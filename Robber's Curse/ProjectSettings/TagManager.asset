@@ -44,3 +44,6 @@ TagManager:
   - name: Far Background
     uniqueID: 2645119645
     locked: 0
+  - name: Hero
+    uniqueID: 2253392295
+    locked: 0
