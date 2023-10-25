@@ -7,7 +7,11 @@ public class Hero : MonoBehaviour
 
     [SerializeField] float m_speed = 4.0f;
     [SerializeField] float m_jumpForce = 8.5f;
-    [SerializeField] float health = 20.0f;
+    public float Maxhealth = 20.0f;
+    public float health = 20.0f;
+    public float MaxMana = 10.0f;
+    public float mana = 10.0f;
+    public float toxic = 0f; //max is 100;
     [SerializeField] float damage = 2.0f;
     public float attackRange = 0.5f;
 
