@@ -6,6 +6,7 @@ public class cameraFollow : MonoBehaviour
 {
 
     private Transform player;
+    public GameObject background;
 
     private Vector3 tempPos;
     // Start is called before the first frame update
@@ -21,5 +22,7 @@ public class cameraFollow : MonoBehaviour
         tempPos.x = player.position.x;
         tempPos.y = player.position.y + (1.5f);
         transform.position = tempPos;
+        background.transform.position = new Vector3(tempPos.x, tempPos.y - 2.0f, background.transform.position.z);
+
     }
 }

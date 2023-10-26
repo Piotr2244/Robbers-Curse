@@ -26,6 +26,10 @@ public class Hero : MonoBehaviour
     private Sensor_Bandit m_groundSensor;
     public LayerMask enemyLayers;
 
+    ////// SPELLS //////
+    private int spellIndex = 1;
+    public GameObject fireballPrefab; //INDEX 1
+
     //particles:
     public ParticleSystem blood;
     void Start()
@@ -47,6 +51,7 @@ public class Hero : MonoBehaviour
             groundHero();
             moveHero();
             meleeAttack();
+            MagicAttack();
         }
 
     }
@@ -152,7 +157,25 @@ public class Hero : MonoBehaviour
         isAttacking = false;
     }
 
-
+    public void MagicAttack()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (spellIndex == 1)
+            {
+                if (fireballPrefab != null)
+                {
+                    if (mana >= 5f)
+                    {
+                        mana -= 5f;
+                        Vector3 playerPosition = transform.position;
+                        playerPosition.y += 0.5f;
+                        Instantiate(fireballPrefab, playerPosition, Quaternion.identity);
+                    }
+                }
+            }
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

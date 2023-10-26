@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4532027378199448331}
   m_Layer: 7
   m_Name: Vulture
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   attackRange: 0.6
   attackSpeed: 0.7
   maxLeft: 5
-  maxRight: 15
+  maxRight: 10
   moveRight: 1
   playerLayer:
     serializedVersion: 2
