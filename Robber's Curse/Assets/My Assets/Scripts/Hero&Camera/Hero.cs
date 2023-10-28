@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using System.Linq;
+using Unity.Mathematics;
+using System;
 
 public class Hero : MonoBehaviour
 {
 
     public float speed = 4.0f;
-    public float jumpForce = 8.5f;
+    public float jumpForce = 9f;
     public float Maxhealth = 20.0f;
-    public float health = 20.0f;
-    public float MaxMana = 10.0f;
-    public float mana = 10.0f;
+    public float health = 50.0f;
+    public float MaxMana = 50.0f;
+    public float mana = 20.0f;
     public float toxic = 0f; //max is 100;
     public float damage = 2.0f;
     public float attackRange = 0.5f;
@@ -28,8 +31,13 @@ public class Hero : MonoBehaviour
     public LayerMask enemyLayers;
 
     ////// SPELLS //////
-    private int spellIndex = 1;
+    bool[] spellLearned = Enumerable.Repeat(true, 4).ToArray();// true means hero knows this spell
+    public int spellIndex = 0;
     public GameObject fireballPrefab; //INDEX 1
+    public GameObject windSpellPrefab; //INDEX 2
+    public GameObject FireCloak; //INDEX 3
+    public GameObject DeathSpell; //INDEX 4
+    public GameObject FireRain; //INDEX 5
 
     //particles:
     public ParticleSystem blood;
@@ -53,6 +61,7 @@ public class Hero : MonoBehaviour
             moveHero();
             meleeAttack();
             MagicAttack();
+            changeSpell();
         }
 
     }
@@ -88,10 +97,6 @@ public class Hero : MonoBehaviour
 
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
-
-
-        //Attack
-
 
         //Change between idle and combat idle
         if (Input.GetKeyDown("f"))
@@ -157,7 +162,27 @@ public class Hero : MonoBehaviour
 
         isAttacking = false;
     }
-
+    private void changeSpell()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            do
+            {
+                spellIndex++;
+                try
+                {
+                    if (spellLearned[spellIndex - 1] == true)
+                        break;
+                }
+                catch //spellindex was 5
+                {
+                    break;
+                }
+            } while (spellIndex != 0);
+            if (spellIndex > 5)
+                spellIndex = 0;
+        }
+    }
     public void MagicAttack()
     {
         if (Input.GetMouseButtonDown(1))
@@ -166,12 +191,81 @@ public class Hero : MonoBehaviour
             {
                 if (fireballPrefab != null)
                 {
+                    if (mana >= 8f)
+                    {
+                        mana -= 8f;
+                        Vector3 playerPosition = transform.position;
+                        playerPosition.y += 0.5f;
+                        Instantiate(fireballPrefab, playerPosition, Quaternion.identity);
+                    }
+                }
+            }
+            if (spellIndex == 2)
+            {
+                if (windSpellPrefab != null)
+                {
                     if (mana >= 5f)
                     {
                         mana -= 5f;
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
-                        Instantiate(fireballPrefab, playerPosition, Quaternion.identity);
+                        Instantiate(windSpellPrefab, playerPosition, Quaternion.identity);
+                    }
+                }
+            }
+            if (spellIndex == 3)
+            {
+                if (FireCloak != null)
+                {
+                    if (mana >= 10f)
+                    {
+                        mana -= 10f;
+                        Vector3 playerPosition = transform.position;
+                        playerPosition.y += 0.5f;
+                        Instantiate(FireCloak, playerPosition, Quaternion.identity);
+                    }
+                }
+            }
+            if (spellIndex == 4)
+            {
+                if (DeathSpell != null)
+                {
+                    if (mana >= 20f)
+                    {
+                        mana -= 20f;
+                        float randomX;
+                        System.Random random = new System.Random();
+                        for (int x = 0; x <= 10; x++)
+                        {
+                            randomX = random.Next(-10, 10);
+                            Vector3 playerPosition = transform.position;
+                            playerPosition.x += randomX;
+                            randomX = random.Next(-25, -15);
+                            playerPosition.y += randomX;
+                            Instantiate(DeathSpell, playerPosition, Quaternion.identity);
+                        }
+                    }
+                }
+            }
+            if (spellIndex == 5)
+            {
+                if (FireRain != null)
+                {
+                    if (mana >= 50f)
+                    {
+                        mana -= 50f;
+                        float randomX;
+                        System.Random random = new System.Random();
+                        for (int x = 0; x <= 30; x++)
+                        {
+                            randomX = random.Next(-15, 15);
+                            Vector3 playerPosition = transform.position;
+                            playerPosition.x += randomX;
+                            randomX = random.Next(20, 25);
+                            playerPosition.y += randomX;
+                            playerPosition.y += x;
+                            Instantiate(FireRain, playerPosition, Quaternion.identity);
+                        }
                     }
                 }
             }
@@ -189,6 +283,7 @@ public class Hero : MonoBehaviour
         health -= damage;
         blood.Play();
     }
+
 
 
 }

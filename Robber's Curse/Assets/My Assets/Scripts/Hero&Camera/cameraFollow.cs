@@ -20,7 +20,7 @@ public class cameraFollow : MonoBehaviour
     {
         tempPos = transform.position;
         tempPos.x = player.position.x;
-        tempPos.y = player.position.y + (1.5f);
+        tempPos.y = player.position.y;// + (1.5f);
         transform.position = tempPos;
         background.transform.position = new Vector3(tempPos.x, tempPos.y - 2.0f, background.transform.position.z);
 

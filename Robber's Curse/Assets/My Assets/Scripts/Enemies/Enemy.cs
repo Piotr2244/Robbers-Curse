@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     protected float speed;
     protected float jumpForce;
-    protected float health;
+    public float health;
     protected float damage;
     protected bool isAlive = true;
     [SerializeField] protected float attackRange;

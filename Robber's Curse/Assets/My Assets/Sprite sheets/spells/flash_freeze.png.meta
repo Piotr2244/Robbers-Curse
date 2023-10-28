@@ -1,0 +1,3797 @@
+fileFormatVersion: 2
+guid: 5f719b5a871571e4db233a63073cd224
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flash_freeze_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2954
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52276d30f6044db46a995305909d13ad
+      internalID: 486695129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 2954
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c1971d048d7344691b51fc72bf8c1e
+      internalID: -61848367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2917
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e17a7f6946d5c4ababf32f3e121ade
+      internalID: 1623811605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 2914
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4b87305d961fe41b39fbb16ef1e0fd
+      internalID: -1565183757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_4
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 2907
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ec3474000120b47acca1848b15f1e1
+      internalID: 38248650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_5
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 2900
+        width: 90
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6384a79ea8cb841a234b53b34a924a
+      internalID: -465274153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_6
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 2892
+        width: 106
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fc1f4934b687e4b90daf85e15498bf
+      internalID: 1067216121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_7
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 2885
+        width: 119
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7eca599b84ec0a489ad497f5fb998ba
+      internalID: 671671084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_8
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 2922
+        width: 41
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c0ffe0b1637bf4eb87f06b12f240c9
+      internalID: -50963206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_9
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 2921
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220df11a589cbbc4fbcd2868ddca88da
+      internalID: -1819943871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 2647
+        width: 82
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1601c93c4817a0c4585a1e1b305599f6
+      internalID: -183375213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_11
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 2644
+        width: 90
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d689e8a82154b4e952761c1b0a6511
+      internalID: -433135673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_12
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 2642
+        width: 95
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ebcf50039e91a49a2cbc2207eb0039
+      internalID: -1555911745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_13
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 2639
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b23733d2f0f004aa5002ce264524c4
+      internalID: 580516241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_14
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 2635
+        width: 107
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6cb20e48e6080499dd7f94775e8b95
+      internalID: 686899060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_15
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 2632
+        width: 114
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71b05cb424819a47a315284d112c052
+      internalID: 310944446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_16
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 2629
+        width: 118
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17bf13f6580a4ec4d892671d2f8e632e
+      internalID: -174599005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_17
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 2632
+        width: 114
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16227d6d83e2a274d8afab7b9a2ea88d
+      internalID: 1050404613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_18
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2375
+        width: 117
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d6175f342b4404daaf9557d679461a
+      internalID: 680554572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 2372
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13e6e917860bbd468c22dff02650632
+      internalID: -1088740491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_20
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2371
+        width: 125
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa836ef56ac746e4cb70fcdadccbbc36
+      internalID: 1510749524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_21
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2369
+        width: 131
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38ad24e1ca61ef49bd42de840ec78d4
+      internalID: 256834718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_22
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 2368
+        width: 134
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bab80f6ba7d9c4abc2a46c531f6717
+      internalID: 1212726205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_23
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 2366
+        width: 139
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cbe0725f3580c4b8985807986c3f99
+      internalID: -155671852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_24
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2365
+        width: 143
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7f6036ed40119418e176341c213efb
+      internalID: 1809317027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_25
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 2363
+        width: 147
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac5c37d8c6dde34a88bfe5c41cf5953
+      internalID: -1548329483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_26
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 2106
+        width: 150
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d6491e05752b545a3b3e9af4722eb2
+      internalID: 932587794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_27
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 2104
+        width: 154
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727c6b8f9d6c9334c899e9fd086ab0f1
+      internalID: 630964670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_28
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2103
+        width: 158
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1919285dcff6e03498e1597077e6585c
+      internalID: 166923043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_29
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 2102
+        width: 162
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29a1394d8a09ed409e614b277879430
+      internalID: 1341305248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_30
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 2101
+        width: 163
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f00c6d673ab36b45b282c4ae5bdbaa2
+      internalID: -648214972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_31
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 2099
+        width: 168
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde4507b8136d83478a9f631ef278c95
+      internalID: 1302468950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_32
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2098
+        width: 170
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647d01364058af74d94c8fbe8cd930b5
+      internalID: -2028701861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_33
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 2097
+        width: 174
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0631e4c5ddaf46408e805ba45884545
+      internalID: -1705390193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_34
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1840
+        width: 175
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc99fbf1cb3a7f24f81c6fe2224c39e4
+      internalID: 477694692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_35
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1839
+        width: 180
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66753fd16228129439b5d2f3f557650f
+      internalID: 246394976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_36
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1838
+        width: 182
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be5cdc1b13fefb4e802918353411413
+      internalID: -1815617869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_37
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1836
+        width: 186
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92191cbdd7ba68418c1f907cf5c5f9a
+      internalID: 533682723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_38
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1836
+        width: 188
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7711f296deb6146a26d2ad0facfc7e
+      internalID: -140487274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_39
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1835
+        width: 190
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d37e6750cf15d45961465ce7b2d638
+      internalID: -1657229927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_40
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1834
+        width: 192
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95da7faea456174eb51bb8339264a83
+      internalID: 2094238681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_41
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 1833
+        width: 195
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e1f91d3effda54eb035cc3d54b7370
+      internalID: -688133064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_42
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1577
+        width: 197
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc5a7c1ab4de4d4fa076be2c15f6537
+      internalID: 1252369120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_43
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1575
+        width: 200
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a704985246b4c42a049f28289f00fe
+      internalID: 38916795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_44
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1575
+        width: 201
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b1a5364a34be5409dc517011bce448
+      internalID: 2023495462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_45
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 1574
+        width: 204
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514bcce02ca9c924285bf95f78adc314
+      internalID: 502952886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_46
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 1574
+        width: 206
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8103a4aae21b2ac4896720e05432f024
+      internalID: 1392864395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_47
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 1573
+        width: 208
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32ef44f590374b4089f5f3c303596de
+      internalID: -1334051460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_48
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1572
+        width: 209
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a57764948ed8524c9d1338171664274
+      internalID: -1882743745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_49
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 1572
+        width: 212
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e597071b695d741b77bdd6ffd71b33
+      internalID: 1719327838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_50
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1315
+        width: 213
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5486024cf0cd69c4088f87fa22b0200a
+      internalID: 1615796380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1314
+        width: 215
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3a80c90ca3ac74f99bcf76ee67b6ee
+      internalID: -1091010481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_52
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1314
+        width: 216
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560ffaae26748ea4aba42a785c18da92
+      internalID: -205987716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_53
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1313
+        width: 218
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0c5ee690f75a14eb7c3b868b73d838
+      internalID: 1192018388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_54
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1312
+        width: 220
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0340dc06a41cf44eb483a98d2261068
+      internalID: -430521871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_55
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1311
+        width: 222
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186bfb2ef652159489b274185b7b8305
+      internalID: 1577729871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_56
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 1311
+        width: 223
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61408f5f86841a4f82b4f386e701d1e
+      internalID: -1792393314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_57
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 1310
+        width: 224
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b24d6e330694940b1f02d3751b4062
+      internalID: 1101638172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_58
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1309
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df60c49a2e07a9f479004747b959e2dc
+      internalID: -704712237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_59
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 1306
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3e2e5e821a94a4f9bffaa30b32dd16
+      internalID: 889587979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_60
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 1301
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9128f3a18a046a41acba3922b5e03eb
+      internalID: -1587250039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_61
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1053
+        width: 225
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b152bf93164c91041bdfbfb73a8c2b51
+      internalID: 108779528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_62
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1051
+        width: 228
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84540970c24cd8d4da920a2816311ddb
+      internalID: -770656092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_63
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1049
+        width: 227
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5eda9eeb85f30948a716f86a895e815
+      internalID: -1230918502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_64
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1052
+        width: 230
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1258c869e2f9f8f45bae58809bd49a17
+      internalID: 1216097619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_65
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1051
+        width: 230
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b952dfb64b0ab8d4e853ce8f639f8a1b
+      internalID: 2042311131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_66
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1050
+        width: 232
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20dbcb4ac8a7a5e4d8958ac5a8d549e2
+      internalID: -1568866819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_67
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 1049
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204239388a158974996c40619a037617
+      internalID: -1914861730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_68
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1050
+        width: 233
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25d96e018659f949802e06efdd92f2d
+      internalID: -391117169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_69
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 1048
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8febbd2fc1ce7e444815ca1df250e0c9
+      internalID: 1419745375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_70
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 1049
+        width: 233
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1362f7c03997f4e47b648556c3e02198
+      internalID: -1226776303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_71
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1043
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb51587808ba954cae0017aff1c44ea
+      internalID: -1922180392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_72
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1045
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dba88a7e056cc347a8951279c52d769
+      internalID: -287727935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_73
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1042
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5d92a252b57ee4684387f1cc53a354
+      internalID: 906194579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_74
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 1043
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9590223d468ea51499ab02c68682d8d1
+      internalID: -1809247988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_75
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1039
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ee479fc4a362143a29029f91155617
+      internalID: -936669489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_76
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1036
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b20fd40e27e05498a8e2dd9cf1c61c
+      internalID: -1519758432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_77
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1037
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23ecf14f5e743848add5fce1fa393f4
+      internalID: 1076873490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_78
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 1035
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac02c08d5633d0468986c2a769957a2
+      internalID: -208026572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_79
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1031
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea800242dee1bf44e83833d975fbebfb
+      internalID: 1933219306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_80
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1028
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfd36fb6ffa5e04eb904be0b466b481
+      internalID: -539931263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_81
+      rect:
+        serializedVersion: 2
+        x: 1926
+        y: 1030
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2491c4aa1bbca9841845b6494ae46623
+      internalID: -1370921038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_82
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 1024
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c11acd788007f243a854acc68004e6f
+      internalID: -398121435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_83
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 1023
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c728df8a6e8917141abdcd3f603a5aa4
+      internalID: 340612513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 793
+        width: 234
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da67c13d49b883348942b43a4f1b0488
+      internalID: 1855258585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_85
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 788
+        width: 236
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb7787a6a5c1e34bb3716751ff6e445
+      internalID: 942718527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_86
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 786
+        width: 236
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788e8977fe97ee24cb155ae1ff0730ef
+      internalID: 180726087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_87
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 791
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fde2f2a380bde841b9205dfa17445f5
+      internalID: -1710642743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_88
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 782
+        width: 236
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782ff1f215288cb4d8fcad49684a157b
+      internalID: 1324864197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_89
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 780
+        width: 237
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cf781f7c23c0e45afd766722e938e7
+      internalID: 1606457435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_90
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 791
+        width: 238
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d16723cdf4e51349bd0ec4f4da3cc0d
+      internalID: -926529711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_91
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 791
+        width: 237
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b401734c6dba144c8368db242bda8b0
+      internalID: 97135646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_92
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 786
+        width: 240
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca69d4d8a96be164fa740c00b63e6ef9
+      internalID: -1460314970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_93
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbdf914823e31e4395cac2ec0268396
+      internalID: 191345893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_94
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 787
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0dcfaec65516294b915c5bf8d12cdcd
+      internalID: -767035555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_95
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 785
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6bfe671f7ccb14b9f15a48cc31a181
+      internalID: 991505863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_96
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 781
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6000b98b2efe97c438f87136ce0b9981
+      internalID: -128967585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_97
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 778
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e073b098f727f459e9aa1b3ae12b3a
+      internalID: 449928983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_98
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 774
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b88a7ec0817d64e9713be81f097cc1
+      internalID: 853737705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_99
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 777
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a0c60483be21d44a86e0e6ea25a6cd
+      internalID: 721411245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_100
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 774
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09db58cddea75f64891d21ab9d14a83c
+      internalID: -1587011628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_101
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 773
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85a1675e53ba3740a10db29532c3b4b
+      internalID: -1066169044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_102
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 772
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a1ad340186b7d42827dde12b809f5d
+      internalID: 1429314560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_103
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 771
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ac85f09491d0243af8be2ed31e342c
+      internalID: -840130996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_104
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 767
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c668873103739348b82ccf37374bfe3
+      internalID: 375871742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_105
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 767
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd170b7bcf11be2499ae74655239ddcf
+      internalID: -1185179229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_106
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 528
+        width: 239
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4428f553da9684bbba9f6246646c9b
+      internalID: 1156510649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_107
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 534
+        width: 239
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe26913f02a5774399e50a400d533d6
+      internalID: -1119939885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_108
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 527
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4ddfcc1b03f234fb9c2caeb687ce4a
+      internalID: -716670536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_109
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 534
+        width: 240
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2126c47f7f81042949f9cd81238a53
+      internalID: 1051079692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_110
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 533
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1ca9e46f9ffc9428fd535cb3b6d0b1
+      internalID: 2017465826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_111
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 534
+        width: 242
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8013f92d20fd94b9e78b65fe95fe76
+      internalID: 1846068804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_112
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 532
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082e20b1f9e3aa44791ebd57a2f09f4c
+      internalID: -1172350818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_113
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 533
+        width: 241
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b4b851972491240af5b0e08d2ddc16
+      internalID: -602092481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_114
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 533
+        width: 241
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36f9f4a75a4a97409501af50a335e31
+      internalID: 1019257492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_115
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 528
+        width: 241
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9838b44918b69c48af7d7d50090b3db
+      internalID: -1786971480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_116
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 527
+        width: 240
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6fdd9c0f4a9ad41a1cf19eb41e73f2
+      internalID: 1777749698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_117
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 531
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b31b3191a2251b4ca6d59d0d9d61ccf
+      internalID: 704749544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_118
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 523
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7930b76b23ec741a1150becc13a65d
+      internalID: -1243445828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_119
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 527
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056afa182ada7e746b1fc5f9ba237ec1
+      internalID: 142367527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_120
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 524
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502a4d582233f664cac5b97fcdf3cc91
+      internalID: -2131674893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_121
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 516
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386f36d4c3660c04cb6e267850c26bea
+      internalID: 289757058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_122
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 520
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666ce5735167a0b4a8a0073b5c4ad456
+      internalID: -588541388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_123
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 515
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a833b7ce8fb85b242aa77e3e6069bf57
+      internalID: 1696887254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_124
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 520
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6639d7f3d02cceb4d836e58a2da03234
+      internalID: 448436624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_125
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 517
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a46ffe8c643e6849948ba8175042707
+      internalID: -694576770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_126
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 273
+        width: 238
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6aa68de67edc174d8d26f21f3e0217e
+      internalID: 535263891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_127
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 511
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf6faa9138926945bd5e7fe3b32c902
+      internalID: 1031920692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_128
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 514
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d21cf22fe1b1614c96aa114d137aa0e
+      internalID: -832305066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_129
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 512
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93219f5827ec5cf46ab05d40139a0205
+      internalID: 1105727768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_130
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 261
+        width: 238
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86df7f64f98f8e48ab601b7f9fab0e7
+      internalID: -1892029057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_131
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 278
+        width: 239
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c855c017c1c5641b06c24c3203a36d
+      internalID: 1723092398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_132
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 264
+        width: 238
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ded5b7a8e69e84d985817efc0eb3a6
+      internalID: 1073604787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_133
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 261
+        width: 238
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa3ec7aed6ecc745bffec2b90abae21
+      internalID: -588704753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_134
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 257
+        width: 237
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a43031b5cbc4b408e5e801576ad457
+      internalID: 903205434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_135
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 272
+        width: 226
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a239f0c67a16ddc4e94b1e6fb383fbd9
+      internalID: -991613720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_136
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 264
+        width: 224
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ff71ec32a6795469d9b1dbc966604e
+      internalID: -1958201230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_137
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 503
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e27f991039f2744b9b5cb353f097bbc
+      internalID: -1984598455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_138
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 383
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71538c9bae6d874fb6f8f9f3b69eac2
+      internalID: 433391042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_139
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 272
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638396652976e9448a1f9a46cda27998
+      internalID: -196269992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_140
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 269
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4084a19d7102a84797f94873f1c1c2d
+      internalID: -730783734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_141
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 266
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86fcd60c23e21ac4aa53ca836a8aa869
+      internalID: 1738622238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_142
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 262
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf008dc9eb17a647859fbfa91481b4d
+      internalID: -71505947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_143
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 260
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe9943c1e80f01499818665ac2009cd
+      internalID: 1660006598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_144
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 254
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2aa2b40801f58540a42a11a630bd68c
+      internalID: 236939522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_145
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 255
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a51734a7fdc3d44979e51442dc09c9
+      internalID: 1396334441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_146
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 26
+        width: 210
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3636d102a61ef24da58e8253adf21a2
+      internalID: 1031375763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_147
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 27
+        width: 208
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db6e0e2812fd7f4386d0e30387584fd
+      internalID: 1300189745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_148
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 29
+        width: 207
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6d249f4d8ed024ea2b9adedebeb312
+      internalID: 1702186849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_149
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 32
+        width: 208
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f255be327d1274ca947af6758fde0b
+      internalID: -385375235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_150
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 20
+        width: 207
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c03c1b3ccb11e4388548f5573dd8cd
+      internalID: 1617289233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_151
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 224
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704caa4ff758cfe44b07e4661f01b175
+      internalID: 894850193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_152
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 231
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2709f2c207c37af408a2d88d5dcf88c1
+      internalID: 1358248351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_153
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 179
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd5f4d26ffd5f3498f7ddc5abfe5857
+      internalID: -134839429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_154
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 182
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6208821852e142a01ea40b076134f
+      internalID: -1930279089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_155
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 57
+        width: 246
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af4b9b91269ea443afd01b6ace830e7
+      internalID: -798820768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_156
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 189
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444080fb502a4564a8ba2f8e7bf7b70e
+      internalID: 1306374012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_157
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 149
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391b84c2fdb15984ab3ee1db2db280ae
+      internalID: -1766215208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_158
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 146
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b5155b9ee6cbb4e80ae5a8d01ff405
+      internalID: 1189881300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_159
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 105
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d568712b2d65fd748870458f35e70e72
+      internalID: 630842216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_160
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 99
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5907f4fe019e8a94cb5e87ec7e2cfa72
+      internalID: 2127963930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_161
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 80
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a48d02f0ee62f49b6e4aaa1f8e52b7
+      internalID: -1607737449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_162
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 86
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289d185dcf5775b44b49d9c8bdb5c9fd
+      internalID: 1739405321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_163
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 80
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2357fab08ca9945b7715b30bae1021
+      internalID: 2084564881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_164
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 54
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b75200b6c9e77438196444f269e6b9
+      internalID: -1975219139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_165
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 51
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0920c222c672b9e4ab0eaa3de5e8a373
+      internalID: 579702624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_freeze_166
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 45
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7d7ea984eadba468d202d152ce18fc
+      internalID: -1361584038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      flash_freeze_0: 486695129
+      flash_freeze_1: -61848367
+      flash_freeze_10: -183375213
+      flash_freeze_100: -1587011628
+      flash_freeze_101: -1066169044
+      flash_freeze_102: 1429314560
+      flash_freeze_103: -840130996
+      flash_freeze_104: 375871742
+      flash_freeze_105: -1185179229
+      flash_freeze_106: 1156510649
+      flash_freeze_107: -1119939885
+      flash_freeze_108: -716670536
+      flash_freeze_109: 1051079692
+      flash_freeze_11: -433135673
+      flash_freeze_110: 2017465826
+      flash_freeze_111: 1846068804
+      flash_freeze_112: -1172350818
+      flash_freeze_113: -602092481
+      flash_freeze_114: 1019257492
+      flash_freeze_115: -1786971480
+      flash_freeze_116: 1777749698
+      flash_freeze_117: 704749544
+      flash_freeze_118: -1243445828
+      flash_freeze_119: 142367527
+      flash_freeze_12: -1555911745
+      flash_freeze_120: -2131674893
+      flash_freeze_121: 289757058
+      flash_freeze_122: -588541388
+      flash_freeze_123: 1696887254
+      flash_freeze_124: 448436624
+      flash_freeze_125: -694576770
+      flash_freeze_126: 535263891
+      flash_freeze_127: 1031920692
+      flash_freeze_128: -832305066
+      flash_freeze_129: 1105727768
+      flash_freeze_13: 580516241
+      flash_freeze_130: -1892029057
+      flash_freeze_131: 1723092398
+      flash_freeze_132: 1073604787
+      flash_freeze_133: -588704753
+      flash_freeze_134: 903205434
+      flash_freeze_135: -991613720
+      flash_freeze_136: -1958201230
+      flash_freeze_137: -1984598455
+      flash_freeze_138: 433391042
+      flash_freeze_139: -196269992
+      flash_freeze_14: 686899060
+      flash_freeze_140: -730783734
+      flash_freeze_141: 1738622238
+      flash_freeze_142: -71505947
+      flash_freeze_143: 1660006598
+      flash_freeze_144: 236939522
+      flash_freeze_145: 1396334441
+      flash_freeze_146: 1031375763
+      flash_freeze_147: 1300189745
+      flash_freeze_148: 1702186849
+      flash_freeze_149: -385375235
+      flash_freeze_15: 310944446
+      flash_freeze_150: 1617289233
+      flash_freeze_151: 894850193
+      flash_freeze_152: 1358248351
+      flash_freeze_153: -134839429
+      flash_freeze_154: -1930279089
+      flash_freeze_155: -798820768
+      flash_freeze_156: 1306374012
+      flash_freeze_157: -1766215208
+      flash_freeze_158: 1189881300
+      flash_freeze_159: 630842216
+      flash_freeze_16: -174599005
+      flash_freeze_160: 2127963930
+      flash_freeze_161: -1607737449
+      flash_freeze_162: 1739405321
+      flash_freeze_163: 2084564881
+      flash_freeze_164: -1975219139
+      flash_freeze_165: 579702624
+      flash_freeze_166: -1361584038
+      flash_freeze_17: 1050404613
+      flash_freeze_18: 680554572
+      flash_freeze_19: -1088740491
+      flash_freeze_2: 1623811605
+      flash_freeze_20: 1510749524
+      flash_freeze_21: 256834718
+      flash_freeze_22: 1212726205
+      flash_freeze_23: -155671852
+      flash_freeze_24: 1809317027
+      flash_freeze_25: -1548329483
+      flash_freeze_26: 932587794
+      flash_freeze_27: 630964670
+      flash_freeze_28: 166923043
+      flash_freeze_29: 1341305248
+      flash_freeze_3: -1565183757
+      flash_freeze_30: -648214972
+      flash_freeze_31: 1302468950
+      flash_freeze_32: -2028701861
+      flash_freeze_33: -1705390193
+      flash_freeze_34: 477694692
+      flash_freeze_35: 246394976
+      flash_freeze_36: -1815617869
+      flash_freeze_37: 533682723
+      flash_freeze_38: -140487274
+      flash_freeze_39: -1657229927
+      flash_freeze_4: 38248650
+      flash_freeze_40: 2094238681
+      flash_freeze_41: -688133064
+      flash_freeze_42: 1252369120
+      flash_freeze_43: 38916795
+      flash_freeze_44: 2023495462
+      flash_freeze_45: 502952886
+      flash_freeze_46: 1392864395
+      flash_freeze_47: -1334051460
+      flash_freeze_48: -1882743745
+      flash_freeze_49: 1719327838
+      flash_freeze_5: -465274153
+      flash_freeze_50: 1615796380
+      flash_freeze_51: -1091010481
+      flash_freeze_52: -205987716
+      flash_freeze_53: 1192018388
+      flash_freeze_54: -430521871
+      flash_freeze_55: 1577729871
+      flash_freeze_56: -1792393314
+      flash_freeze_57: 1101638172
+      flash_freeze_58: -704712237
+      flash_freeze_59: 889587979
+      flash_freeze_6: 1067216121
+      flash_freeze_60: -1587250039
+      flash_freeze_61: 108779528
+      flash_freeze_62: -770656092
+      flash_freeze_63: -1230918502
+      flash_freeze_64: 1216097619
+      flash_freeze_65: 2042311131
+      flash_freeze_66: -1568866819
+      flash_freeze_67: -1914861730
+      flash_freeze_68: -391117169
+      flash_freeze_69: 1419745375
+      flash_freeze_7: 671671084
+      flash_freeze_70: -1226776303
+      flash_freeze_71: -1922180392
+      flash_freeze_72: -287727935
+      flash_freeze_73: 906194579
+      flash_freeze_74: -1809247988
+      flash_freeze_75: -936669489
+      flash_freeze_76: -1519758432
+      flash_freeze_77: 1076873490
+      flash_freeze_78: -208026572
+      flash_freeze_79: 1933219306
+      flash_freeze_8: -50963206
+      flash_freeze_80: -539931263
+      flash_freeze_81: -1370921038
+      flash_freeze_82: -398121435
+      flash_freeze_83: 340612513
+      flash_freeze_84: 1855258585
+      flash_freeze_85: 942718527
+      flash_freeze_86: 180726087
+      flash_freeze_87: -1710642743
+      flash_freeze_88: 1324864197
+      flash_freeze_89: 1606457435
+      flash_freeze_9: -1819943871
+      flash_freeze_90: -926529711
+      flash_freeze_91: 97135646
+      flash_freeze_92: -1460314970
+      flash_freeze_93: 191345893
+      flash_freeze_94: -767035555
+      flash_freeze_95: 991505863
+      flash_freeze_96: -128967585
+      flash_freeze_97: 449928983
+      flash_freeze_98: 853737705
+      flash_freeze_99: 721411245
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

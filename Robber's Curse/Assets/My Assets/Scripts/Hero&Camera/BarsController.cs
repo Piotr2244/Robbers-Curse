@@ -30,17 +30,17 @@ public class BarsController : MonoBehaviour
         if (index == 1)
         {
             tempPos.x = hero.transform.position.x - (5.25f);
-            tempPos.y = hero.transform.position.y + (5.5f);
+            tempPos.y = hero.transform.position.y + (4.0f);
         }
         if (index == 2)
         {
             tempPos.x = hero.transform.position.x + (1.25f);
-            tempPos.y = hero.transform.position.y + (5.5f);
+            tempPos.y = hero.transform.position.y + (4.0f);
         }
         if (index == 3)
         {
             tempPos.x = hero.transform.position.x + (8.0f);
-            tempPos.y = hero.transform.position.y + (5.5f);
+            tempPos.y = hero.transform.position.y + (4.0f);
         }
         transform.position = tempPos;
     }
