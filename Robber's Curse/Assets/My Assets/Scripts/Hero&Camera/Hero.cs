@@ -5,15 +5,16 @@ using Unity.VisualScripting;
 public class Hero : MonoBehaviour
 {
 
-    [SerializeField] float m_speed = 4.0f;
-    [SerializeField] float m_jumpForce = 8.5f;
+    public float speed = 4.0f;
+    public float jumpForce = 8.5f;
     public float Maxhealth = 20.0f;
     public float health = 20.0f;
     public float MaxMana = 10.0f;
     public float mana = 10.0f;
     public float toxic = 0f; //max is 100;
-    [SerializeField] float damage = 2.0f;
+    public float damage = 2.0f;
     public float attackRange = 0.5f;
+    public float gold = 0;
 
     private bool m_grounded = false;
     private bool m_combatIdle = false;
@@ -83,7 +84,7 @@ public class Hero : MonoBehaviour
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         // Move
-        m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+        m_body2d.velocity = new Vector2(inputX * speed, m_body2d.velocity.y);
 
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
@@ -98,15 +99,15 @@ public class Hero : MonoBehaviour
             m_combatIdle = !m_combatIdle;
             if (!m_combatIdle)
             {
-                m_speed += 2.0f;
+                speed += 2.0f;
                 damage -= 1.0f;
-                m_jumpForce += 1.5f;
+                jumpForce += 1.5f;
             }
             if (m_combatIdle)
             {
-                m_speed -= 2.0f;
+                speed -= 2.0f;
                 damage += 1.0f;
-                m_jumpForce -= 1.5f;
+                jumpForce -= 1.5f;
             }
         }
 
@@ -116,7 +117,7 @@ public class Hero : MonoBehaviour
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
+            m_body2d.velocity = new Vector2(m_body2d.velocity.x, jumpForce);
             m_groundSensor.Disable(0.2f);
         }
 
