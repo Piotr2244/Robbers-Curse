@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1088353640}
   m_Layer: 7
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2f06f5a6a134642b67a7945e7b112b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   attackRange: 0.4
   attackSpeed: 1
   maxLeft: 8
