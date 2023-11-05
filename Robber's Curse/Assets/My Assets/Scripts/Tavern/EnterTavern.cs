@@ -5,7 +5,6 @@ public class EnterTavern : MonoBehaviour
     public Transform tavernZone;
     public Canvas tavernText;
     public Canvas tavernCanvas;
-    public Canvas tavernCanvasText;
     private bool isInside = false;
     public LayerMask heroLayer;
 
@@ -38,7 +37,6 @@ public class EnterTavern : MonoBehaviour
         {
             isInside = true;
             tavernCanvas.gameObject.SetActive(true);
-            tavernCanvasText.gameObject.SetActive(true);
         }
     }
     private void QuitTavern()
@@ -47,7 +45,6 @@ public class EnterTavern : MonoBehaviour
         {
             isInside = false;
             tavernCanvas.gameObject.SetActive(false);
-            tavernCanvasText.gameObject.SetActive(false);
         }
     }
 

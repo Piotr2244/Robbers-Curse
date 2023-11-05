@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,15 +6,23 @@ public class EquipmentScript : MonoBehaviour
 {
     public Hero hero;
 
+    //STATISTICS
     private Text goldText;
     private Text strengthText;
     private Text speedText;
     private Text jumpText;
+    //SPELLS
     private SpriteRenderer spell1;
     private SpriteRenderer spell2;
     private SpriteRenderer spell3;
     private SpriteRenderer spell4;
     private SpriteRenderer spell5;
+
+    //ITEMS
+    public Item item1;
+    public Item item2;
+    public Item item3;
+    public Item item4;
 
     private void Awake()
     {
@@ -21,11 +30,17 @@ public class EquipmentScript : MonoBehaviour
         strengthText = transform.Find("StrengthBar/strength").GetComponent<Text>();
         speedText = transform.Find("SpeedBar/speed").GetComponent<Text>();
         jumpText = transform.Find("JumpBar/jump").GetComponent<Text>();
+
         spell1 = transform.Find("SpellBar/1").GetComponent<SpriteRenderer>();
         spell2 = transform.Find("SpellBar/2").GetComponent<SpriteRenderer>();
         spell3 = transform.Find("SpellBar/3").GetComponent<SpriteRenderer>();
         spell4 = transform.Find("SpellBar/4").GetComponent<SpriteRenderer>();
         spell5 = transform.Find("SpellBar/5").GetComponent<SpriteRenderer>();
+
+        item1 = transform.Find("Equipment/Eq1").GetComponent<Item>();
+        item2 = transform.Find("Equipment/Eq2").GetComponent<Item>();
+        item3 = transform.Find("Equipment/Eq3").GetComponent<Item>();
+        item4 = transform.Find("Equipment/Eq4").GetComponent<Item>();
 
     }
 
@@ -38,6 +53,7 @@ public class EquipmentScript : MonoBehaviour
             speedText.text = hero.speed.ToString();
             jumpText.text = hero.jumpForce.ToString();
             changeSpell();
+            useItem();
         }
     }
 
@@ -67,6 +83,26 @@ public class EquipmentScript : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private void useItem()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            item1.UseCurrentItem();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            item2.UseCurrentItem();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            item3.UseCurrentItem();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            item4.UseCurrentItem();
         }
     }
 }
