@@ -7,7 +7,6 @@ using System;
 public class Item : MonoBehaviour
 {
     public InventoryBase invBase;
-    public bool CanBePicked = false;
 
     private TextMeshProUGUI itemName;
     private SpriteRenderer ItemSprite;

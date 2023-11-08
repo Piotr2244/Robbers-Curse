@@ -39,7 +39,6 @@ public class InventoryBase : MonoBehaviour
 
     public void Item1Used()
     {
-        Debug.Log("3");
         if (hero.health + 5 <= hero.Maxhealth)
             hero.health += 5;
         else

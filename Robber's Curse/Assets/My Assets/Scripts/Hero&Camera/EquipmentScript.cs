@@ -42,6 +42,8 @@ public class EquipmentScript : MonoBehaviour
         item3 = transform.Find("Equipment/Eq3").GetComponent<Item>();
         item4 = transform.Find("Equipment/Eq4").GetComponent<Item>();
 
+        ItemToCollect.OnItemCollision += GetItem;
+
     }
 
     private void Update()
@@ -104,5 +106,21 @@ public class EquipmentScript : MonoBehaviour
         {
             item4.UseCurrentItem();
         }
+    }
+
+    private void GetItem(int indexx, GameObject instance)
+    {
+        if (item1.ItemIndex == 0)
+            item1.ItemIndex = indexx;
+        else if (item2.ItemIndex == 0)
+            item2.ItemIndex = indexx;
+        else if (item3.ItemIndex == 0)
+            item3.ItemIndex = indexx;
+        else if (item4.ItemIndex == 0)
+            item4.ItemIndex = indexx;
+        else
+            return;
+        Destroy(instance);
+
     }
 }

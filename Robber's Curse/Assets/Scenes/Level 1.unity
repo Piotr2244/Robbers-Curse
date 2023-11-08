@@ -90955,10 +90955,18 @@ PrefabInstance:
       propertyPath: invBase
       value: 
       objectReference: {fileID: 1375774905}
+    - target: {fileID: 2367960945553744189, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
+      propertyPath: ItemIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367960946198214604, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
       propertyPath: invBase
       value: 
       objectReference: {fileID: 1375774905}
+    - target: {fileID: 2367960946198214604, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
+      propertyPath: ItemIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367960946482039766, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -91059,6 +91067,10 @@ PrefabInstance:
       propertyPath: invBase
       value: 
       objectReference: {fileID: 1375774905}
+    - target: {fileID: 2367960946681692165, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
+      propertyPath: ItemIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367960947013246374, guid: 1996062c34865ca4f9dee418c900df51, type: 3}
       propertyPath: invBase
       value: 
@@ -91167,6 +91179,10 @@ PrefabInstance:
     - target: {fileID: 4201887966003590470, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
       propertyPath: m_Name
       value: Tavern
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201887966003590470, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
