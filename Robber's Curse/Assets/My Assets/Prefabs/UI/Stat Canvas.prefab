@@ -565,8 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invBase: {fileID: 0}
-  CanBePicked: 0
-  ItemIndex: 3
+  ItemIndex: 0
 --- !u!1 &2367960945641378387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,8 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invBase: {fileID: 0}
-  CanBePicked: 0
-  ItemIndex: 5
+  ItemIndex: 0
 --- !u!1 &2367960946259687522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,8 +2785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invBase: {fileID: 0}
-  CanBePicked: 0
-  ItemIndex: 2
+  ItemIndex: 0
 --- !u!1 &2367960946821819792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invBase: {fileID: 0}
-  CanBePicked: 0
   ItemIndex: 0
 --- !u!1 &2367960947061552875
 GameObject:

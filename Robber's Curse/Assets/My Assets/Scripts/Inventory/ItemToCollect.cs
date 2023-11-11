@@ -20,8 +20,4 @@ public class ItemToCollect : MonoBehaviour
             }
         }
     }
-    private void UpdateIfCanBEPicked()
-    {
-
-    }
 }

@@ -123,4 +123,30 @@ public class EquipmentScript : MonoBehaviour
         Destroy(instance);
 
     }
+
+    public bool BuyItem(int indexx)
+    {
+        if (item1.ItemIndex == 0)
+        {
+            item1.ItemIndex = indexx;
+            return true;
+        }
+        else if (item2.ItemIndex == 0)
+        {
+            item2.ItemIndex = indexx;
+            return true;
+        }
+        else if (item3.ItemIndex == 0)
+        {
+            item3.ItemIndex = indexx;
+            return true;
+        }
+        else if (item4.ItemIndex == 0)
+        {
+            item4.ItemIndex = indexx;
+            return true;
+        }
+        else
+            return false;
+    }
 }
