@@ -63716,10 +63716,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4805181885227780, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805181885227780, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 165.13
       objectReference: {fileID: 0}
@@ -63759,58 +63755,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212259381048184306, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212259381048184306, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212259381048184306, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -2041575001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: gold
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: mana
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: health
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: MaxMana
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: FireRain
-      value: 
-      objectReference: {fileID: 149278080227573933, guid: 08c0ede59a6a07f4aa831b84a0b03cec, type: 3}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: FireCloak
-      value: 
-      objectReference: {fileID: 5198274594585211181, guid: 81b38b585ace0a14fbbd04f5e567cc09, type: 3}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: DeathSpell
-      value: 
-      objectReference: {fileID: 7288058348060334748, guid: 15b51463ccc38174fab54a6036d57337, type: 3}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: m_jumpForce
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: fireballPrefab
-      value: 
-      objectReference: {fileID: 908613782790377523, guid: 67b3e9c806bb8e945ab9de3883cf8bcc, type: 3}
-    - target: {fileID: 5242284760721994360, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
-      propertyPath: windSpellPrefab
-      value: 
-      objectReference: {fileID: 7993389679580102534, guid: 8829e5bce9579374faaa349c9c5288e1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1297c751d6a680245a8f2201d923e17b, type: 3}
 --- !u!114 &340577765 stripped
@@ -91087,10 +91031,6 @@ PrefabInstance:
       propertyPath: invBase
       value: 
       objectReference: {fileID: 1375774905}
-    - target: {fileID: 488992291, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -205.30002
-      objectReference: {fileID: 0}
     - target: {fileID: 1429334425, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
       propertyPath: invBase
       value: 
@@ -91198,10 +91138,6 @@ PrefabInstance:
     - target: {fileID: 4201887966003590470, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
       propertyPath: m_Name
       value: Tavern
-      objectReference: {fileID: 0}
-    - target: {fileID: 4201887966003590470, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49e7c14cf11447d4ba48ea55c85ef9e7, type: 3}

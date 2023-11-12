@@ -149,4 +149,8 @@ public class EquipmentScript : MonoBehaviour
         else
             return false;
     }
+    public void OnDisable()
+    {
+        ItemToCollect.OnItemCollision -= GetItem;
+    }
 }

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1689866831511430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4269114208525818}
@@ -98,9 +98,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2041575001
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,15 +145,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8a7b25da07ef54bb54301c278fed3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 4
-  m_jumpForce: 8
-  health: 10
+  speed: 4
+  jumpForce: 9
+  Maxhealth: 20
+  health: 20
+  MaxMana: 200
+  mana: 200
+  toxic: 0
   damage: 2
   attackRange: 0.5
+  gold: 500
+  manaRegen: 1
+  HpRegen: 0
   attackPoint: {fileID: 920792435844188735}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  spellIndex: 0
+  fireballPrefab: {fileID: 908613782790377523, guid: 67b3e9c806bb8e945ab9de3883cf8bcc, type: 3}
+  windSpellPrefab: {fileID: 7993389679580102534, guid: 8829e5bce9579374faaa349c9c5288e1, type: 3}
+  FireCloak: {fileID: 5198274594585211181, guid: 81b38b585ace0a14fbbd04f5e567cc09, type: 3}
+  DeathSpell: {fileID: 7288058348060334748, guid: 15b51463ccc38174fab54a6036d57337, type: 3}
+  FireRain: {fileID: 149278080227573933, guid: 08c0ede59a6a07f4aa831b84a0b03cec, type: 3}
   blood: {fileID: 7059388627604732348}
 --- !u!70 &236568824
 CapsuleCollider2D:

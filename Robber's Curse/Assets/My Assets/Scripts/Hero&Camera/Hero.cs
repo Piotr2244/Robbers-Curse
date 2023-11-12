@@ -19,6 +19,9 @@ public class Hero : MonoBehaviour
     public float attackRange = 0.5f;
     public float gold = 0;
 
+    public float manaRegen = 1;
+    public float HpRegen = 0;
+
     private bool m_grounded = false;
     private bool m_combatIdle = false;
     private bool m_isDead = false;
@@ -41,11 +44,20 @@ public class Hero : MonoBehaviour
 
     //particles:
     public ParticleSystem blood;
+
+    //current hero state
+    private SingleState CurrentState;
+    private void Awake()
+    {
+        SingleState.ChangeState += GetStateAtributes;
+        SingleState.UndoState += UndoStateAtributes;
+    }
     void Start()
     {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
+        StartCoroutine(Regeneration());
     }
 
     // Update is called once per frame
@@ -144,6 +156,21 @@ public class Hero : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(MeleeAttackCoroutine());
+        }
+    }
+
+    private IEnumerator Regeneration()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+            if (HpRegen > 0)
+                if (health + HpRegen < Maxhealth)
+                    health += HpRegen;
+            if (manaRegen > 0)
+                if (mana + manaRegen < MaxMana)
+                    mana += manaRegen;
+
         }
     }
 
@@ -272,6 +299,25 @@ public class Hero : MonoBehaviour
         }
     }
 
+    public void GetStateAtributes(SingleState state)
+    {
+        CurrentState = state;
+        speed += CurrentState.speed;
+        jumpForce += CurrentState.jump;
+        damage += CurrentState.strength;
+        HpRegen += CurrentState.hpRegen;
+        manaRegen += CurrentState.ManaRegen;
+    }
+    public void UndoStateAtributes()
+    {
+        if (CurrentState == null)
+            return;
+        speed -= CurrentState.speed;
+        jumpForce -= CurrentState.jump;
+        damage -= CurrentState.strength;
+        HpRegen -= CurrentState.hpRegen;
+        manaRegen -= CurrentState.ManaRegen;
+    }
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -282,6 +328,12 @@ public class Hero : MonoBehaviour
     {
         health -= damage;
         blood.Play();
+    }
+
+    private void OnDisable()
+    {
+        SingleState.ChangeState -= GetStateAtributes;
+        SingleState.UndoState -= UndoStateAtributes;
     }
 
 
