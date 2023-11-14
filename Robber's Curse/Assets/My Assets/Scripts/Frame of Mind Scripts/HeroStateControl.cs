@@ -35,13 +35,15 @@ public class HeroStateControl : MonoBehaviour
         currentInjuries = newInjuries;
         currentSickness = newSickness;
     }
-
-
+    private void Awake()
+    {
+        Hero.UpdateState += RequestAtributesUpdate;
+    }
     private IEnumerator OverloadController()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
             if (FatigueOverload >= 1.0f)
             {
                 FatigueOverload = 0.0f;
@@ -83,7 +85,11 @@ public class HeroStateControl : MonoBehaviour
             }
         }
     }
-    private IEnumerator RequestAtributesUpdate(int AtributeIndex, float ChangeValue, float DelayValue) //Fatigue = 1, Injuries = 2, Sickness = 3
+    private void RequestAtributesUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0) //Fatigue = 1, Injuries = 2, Sickness = 3
+    {
+        StartCoroutine(StartUpdating(AtributeIndex, ChangeValue, DelayValue));
+    }
+    private IEnumerator StartUpdating(int AtributeIndex, float ChangeValue, float DelayValue)
     {
         yield return new WaitForSeconds(DelayValue);
         if (AtributeIndex == 1)
@@ -115,7 +121,6 @@ public class HeroStateControl : MonoBehaviour
         CurrentState.isActiveState = true;
         CurrentState.UseActiveState();
         UpdateDisplay();
-
     }
     private void UpdateDisplay()
     {
@@ -191,6 +196,11 @@ public class HeroStateControl : MonoBehaviour
         States.Add(tempState);
         tempState = new SingleState("Doomed", 100, 100, 100, 5, 5, 5, 2, -3);
         States.Add(tempState);
+    }
+
+    private void OnDisable()
+    {
+        Hero.UpdateState -= RequestAtributesUpdate;
     }
 
 }

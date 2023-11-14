@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using System.Linq;
 using Unity.Mathematics;
 using System;
+using static Hero;
 
 public class Hero : MonoBehaviour
 {
@@ -22,14 +23,14 @@ public class Hero : MonoBehaviour
     public float manaRegen = 1;
     public float HpRegen = 0;
 
-    private bool m_grounded = false;
-    private bool m_combatIdle = false;
-    private bool m_isDead = false;
+    private bool grounded = false;
+    private bool combatIdle = false;
+    private bool isDead = false;
     private bool isAttacking = false;
 
     public Transform attackPoint;
-    private Animator m_animator;
-    private Rigidbody2D m_body2d;
+    private Animator animator;
+    private Rigidbody2D body2d;
     private Sensor_Bandit m_groundSensor;
     public LayerMask enemyLayers;
 
@@ -47,6 +48,14 @@ public class Hero : MonoBehaviour
 
     //current hero state
     private SingleState CurrentState;
+
+    //State delegate
+    public delegate void SendStateUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0);
+    public static event SendStateUpdate UpdateState;
+
+    //temp values
+    private bool ToxicBoostActive = false;
+    private float SpellOverloadCountdown = 0.0f;
     private void Awake()
     {
         SingleState.ChangeState += GetStateAtributes;
@@ -54,8 +63,8 @@ public class Hero : MonoBehaviour
     }
     void Start()
     {
-        m_animator = GetComponent<Animator>();
-        m_body2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
         StartCoroutine(Regeneration());
     }
@@ -63,10 +72,8 @@ public class Hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (health <= 0)
-            m_animator.SetBool("Death", true);
+            animator.SetBool("Death", true);
         else
         {
             groundHero();
@@ -74,6 +81,7 @@ public class Hero : MonoBehaviour
             meleeAttack();
             MagicAttack();
             changeSpell();
+            ToxicBoost();
         }
 
     }
@@ -81,16 +89,16 @@ public class Hero : MonoBehaviour
     private void groundHero()
     {
         //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State())
+        if (!grounded && m_groundSensor.State())
         {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
+            grounded = true;
+            animator.SetBool("Grounded", grounded);
         }
         //Check if character just started falling
-        if (m_grounded && !m_groundSensor.State())
+        if (grounded && !m_groundSensor.State())
         {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
+            grounded = false;
+            animator.SetBool("Grounded", grounded);
         }
     }
     private void moveHero()
@@ -105,50 +113,52 @@ public class Hero : MonoBehaviour
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         // Move
-        m_body2d.velocity = new Vector2(inputX * speed, m_body2d.velocity.y);
+        body2d.velocity = new Vector2(inputX * speed, body2d.velocity.y);
 
         //Set AirSpeed in animator
-        m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
+        animator.SetFloat("AirSpeed", body2d.velocity.y);
 
         //Change between idle and combat idle
         if (Input.GetKeyDown("f"))
         {
-            m_combatIdle = !m_combatIdle;
-            if (!m_combatIdle)
+            combatIdle = !combatIdle;
+            if (!combatIdle)
             {
                 speed += 2.0f;
                 damage -= 1.0f;
                 jumpForce += 1.5f;
             }
-            if (m_combatIdle)
+            if (combatIdle)
             {
                 speed -= 2.0f;
                 damage += 1.0f;
                 jumpForce -= 1.5f;
             }
+            UpdateState.Invoke(1, 0.5f, 5);
         }
 
         //Jump
-        else if (Input.GetKeyDown("space") && m_grounded)
+        else if (Input.GetKeyDown("space") && grounded)
         {
-            m_animator.SetTrigger("Jump");
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, jumpForce);
+            animator.SetTrigger("Jump");
+            grounded = false;
+            animator.SetBool("Grounded", grounded);
+            body2d.velocity = new Vector2(body2d.velocity.x, jumpForce);
             m_groundSensor.Disable(0.2f);
+            UpdateState.Invoke(1, 0.01f, 2);
         }
 
         //Run
         else if (Mathf.Abs(inputX) > Mathf.Epsilon)
-            m_animator.SetInteger("AnimState", 2);
+            animator.SetInteger("AnimState", 2);
 
         //Combat Idle
-        else if (m_combatIdle)
-            m_animator.SetInteger("AnimState", 1);
+        else if (combatIdle)
+            animator.SetInteger("AnimState", 1);
 
         //Idle
         else
-            m_animator.SetInteger("AnimState", 0);
+            animator.SetInteger("AnimState", 0);
     }
 
     private void meleeAttack()
@@ -161,23 +171,29 @@ public class Hero : MonoBehaviour
 
     private IEnumerator Regeneration()
     {
+        int secondCounter = 0;
         while (true)
         {
-            yield return new WaitForSeconds(10f);
-            if (HpRegen > 0)
-                if (health + HpRegen < Maxhealth)
-                    health += HpRegen;
-            if (manaRegen > 0)
-                if (mana + manaRegen < MaxMana)
-                    mana += manaRegen;
-
+            yield return new WaitForSeconds(1f);
+            secondCounter++;
+            if (secondCounter % 10 == 0)
+            {
+                if (HpRegen > 0)
+                    if (health + HpRegen < Maxhealth)
+                        health += HpRegen;
+                if (manaRegen > 0)
+                    if (mana + manaRegen < MaxMana)
+                        mana += manaRegen;
+            }
+            if (SpellOverloadCountdown > 0)
+                SpellOverloadCountdown -= 1;
         }
     }
 
     private IEnumerator MeleeAttackCoroutine()
     {
         isAttacking = true;
-        m_animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
 
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -185,8 +201,10 @@ public class Hero : MonoBehaviour
         foreach (Collider2D enemy in HitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(damage);
-        }
+            UpdateState.Invoke(1, 0.05f, 2);
 
+        }
+        UpdateState.Invoke(1, 0.01f, 2);
         isAttacking = false;
     }
     private void changeSpell()
@@ -210,6 +228,14 @@ public class Hero : MonoBehaviour
                 spellIndex = 0;
         }
     }
+    private void ToxicBoost()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && ToxicBoostActive == false)
+        {
+            ToxicBoostActive = true;
+            StartCoroutine(ToxicBoostCorutine());
+        }
+    }
     public void MagicAttack()
     {
         if (Input.GetMouseButtonDown(1))
@@ -224,6 +250,7 @@ public class Hero : MonoBehaviour
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
                         Instantiate(fireballPrefab, playerPosition, Quaternion.identity);
+                        SpellOverloadController(3);
                     }
                 }
             }
@@ -237,6 +264,7 @@ public class Hero : MonoBehaviour
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
                         Instantiate(windSpellPrefab, playerPosition, Quaternion.identity);
+                        SpellOverloadController(3);
                     }
                 }
             }
@@ -250,6 +278,7 @@ public class Hero : MonoBehaviour
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
                         Instantiate(FireCloak, playerPosition, Quaternion.identity);
+                        SpellOverloadController(10);
                     }
                 }
             }
@@ -271,6 +300,7 @@ public class Hero : MonoBehaviour
                             playerPosition.y += randomX;
                             Instantiate(DeathSpell, playerPosition, Quaternion.identity);
                         }
+                        SpellOverloadController(15);
                     }
                 }
             }
@@ -293,6 +323,7 @@ public class Hero : MonoBehaviour
                             playerPosition.y += x;
                             Instantiate(FireRain, playerPosition, Quaternion.identity);
                         }
+                        SpellOverloadController(20);
                     }
                 }
             }
@@ -328,6 +359,7 @@ public class Hero : MonoBehaviour
     {
         health -= damage;
         blood.Play();
+        UpdateState.Invoke(2, 1f);
     }
 
     private void OnDisable()
@@ -336,6 +368,39 @@ public class Hero : MonoBehaviour
         SingleState.UndoState -= UndoStateAtributes;
     }
 
+    private IEnumerator ToxicBoostCorutine()
+    {
+        toxic += 1;
+        jumpForce += 6;
+        damage += 2;
+        speed += 2;
+        if (mana + 100 < MaxMana)
+            mana += 100;
+        else
+            mana = MaxMana;
+        UpdateState.Invoke(3, 1, 0);
+        yield return new WaitForSeconds(15);
+        toxic += 1;
+        jumpForce -= 6;
+        damage -= 2;
+        speed -= 2;
+        UpdateState.Invoke(3, 1, 20);
+        ToxicBoostActive = false;
 
+    }
 
+    private void SpellOverloadController(float time)
+    {
+        if (SpellOverloadCountdown > 0)
+        {
+            UpdateState.Invoke(3, 0.1f);
+            toxic += 0.1f;
+        }
+        if (SpellOverloadCountdown > 20)
+        {
+            UpdateState.Invoke(3, 0.2f);
+            toxic += 0.2f;
+        }
+        SpellOverloadCountdown += time;
+    }
 }
