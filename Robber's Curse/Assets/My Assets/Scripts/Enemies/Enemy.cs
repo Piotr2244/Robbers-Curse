@@ -25,10 +25,14 @@ public class Enemy : MonoBehaviour
     protected Rigidbody2D body2d;
     public Transform attackPoint;
 
+    public int coinAmount = 0;
+    public bool moneyDroped = false;
+    public GameObject coin;
+
 
     //particles:
     public ParticleSystem blood;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -58,6 +62,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            dropMoney();
             Death();
         }
 
@@ -167,6 +172,19 @@ public class Enemy : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
         }
+    }
+
+    private void dropMoney()
+    {
+        if (!moneyDroped)
+            if (coin != null)
+            {
+                moneyDroped = true;
+                Vector3 enemyPos = transform.position;
+                enemyPos.y += 0.5f;
+                for (int x = 0; x < coinAmount; x++)
+                    Instantiate(coin, enemyPos, Quaternion.identity);
+            }
     }
 
 }

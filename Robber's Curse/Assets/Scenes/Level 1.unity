@@ -2118,14 +2118,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vulture
       objectReference: {fileID: 0}
-    - target: {fileID: 4532027378199448331, guid: 5dc39b1211a85244587435cdf52c331f, type: 3}
-      propertyPath: maxLeft
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532027378199448331, guid: 5dc39b1211a85244587435cdf52c331f, type: 3}
-      propertyPath: maxRight
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc39b1211a85244587435cdf52c331f, type: 3}
 --- !u!4 &114426242 stripped
@@ -2576,10 +2568,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 149282619}
     m_Modifications:
-    - target: {fileID: 1088353640, guid: f16dae03a1a5cbf43af18b12580948e1, type: 3}
-      propertyPath: maxLeft
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5347613689795268698, guid: f16dae03a1a5cbf43af18b12580948e1, type: 3}
       propertyPath: m_Name
       value: Goblin
@@ -86413,14 +86401,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 149282619}
     m_Modifications:
-    - target: {fileID: 919758355, guid: ea1be83b289b9744abd8ad5bcd16428c, type: 3}
-      propertyPath: maxLeft
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 919758355, guid: ea1be83b289b9744abd8ad5bcd16428c, type: 3}
-      propertyPath: maxRight
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3141361565970642123, guid: ea1be83b289b9744abd8ad5bcd16428c, type: 3}
       propertyPath: m_RootOrder
       value: 9

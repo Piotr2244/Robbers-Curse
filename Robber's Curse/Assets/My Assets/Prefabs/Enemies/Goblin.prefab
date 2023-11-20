@@ -204,13 +204,16 @@ MonoBehaviour:
   health: 5
   attackRange: 0.4
   attackSpeed: 1
-  maxLeft: 8
+  maxLeft: 6
   maxRight: 8
   moveRight: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   attackPoint: {fileID: 100609986}
+  coinAmount: 2
+  moneyDroped: 0
+  coin: {fileID: 3529924548083368553, guid: 183879f675ed74346907554e0896c085, type: 3}
   blood: {fileID: 3152931905098424647}
 --- !u!1001 &5347613690181024084
 PrefabInstance:

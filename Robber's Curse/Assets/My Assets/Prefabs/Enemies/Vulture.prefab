@@ -170,15 +170,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcad46b1370f4743a89b9b19e244908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 6
   attackRange: 0.6
   attackSpeed: 0.7
-  maxLeft: 5
-  maxRight: 10
+  maxLeft: 3
+  maxRight: 3
   moveRight: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   attackPoint: {fileID: 4532027379452850142}
+  coinAmount: 2
+  moneyDroped: 0
+  coin: {fileID: 3529924548083368553, guid: 183879f675ed74346907554e0896c085, type: 3}
   blood: {fileID: 6850822130362887806}
 --- !u!1 &4532027379452850113
 GameObject:

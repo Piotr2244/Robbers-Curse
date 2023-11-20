@@ -60,6 +60,8 @@ public class Hero : MonoBehaviour
     {
         SingleState.ChangeState += GetStateAtributes;
         SingleState.UndoState += UndoStateAtributes;
+        Coin.OnItemCollision += CollectGold;
+
     }
     void Start()
     {
@@ -366,6 +368,7 @@ public class Hero : MonoBehaviour
     {
         SingleState.ChangeState -= GetStateAtributes;
         SingleState.UndoState -= UndoStateAtributes;
+        Coin.OnItemCollision -= CollectGold;
     }
 
     private IEnumerator ToxicBoostCorutine()
@@ -402,5 +405,11 @@ public class Hero : MonoBehaviour
             toxic += 0.2f;
         }
         SpellOverloadCountdown += time;
+    }
+
+    private void CollectGold(Coin coin)
+    {
+        gold += coin.value;
+        Destroy(coin.gameObject);
     }
 }
