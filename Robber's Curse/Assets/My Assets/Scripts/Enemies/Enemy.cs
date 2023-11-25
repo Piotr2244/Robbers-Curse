@@ -10,15 +10,15 @@ public class Enemy : MonoBehaviour
     protected float jumpForce;
     public float health;
     protected float damage;
-    protected bool isAlive = true;
+    public bool isAlive = true;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float attackSpeed; // the lower speed, the faster attacks, works like a delay between attacks
 
     protected bool isAttacking = false;
     private bool canAttack = true;
-    [SerializeField] float maxLeft;
-    [SerializeField] float maxRight;
-    [SerializeField] bool moveRight;
+    public float maxLeft;
+    public float maxRight;
+    public bool moveRight;
 
     public LayerMask playerLayer;
     protected Animator animator;

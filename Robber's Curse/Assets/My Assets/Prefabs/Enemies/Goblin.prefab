@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1088353639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,8 +204,8 @@ MonoBehaviour:
   health: 5
   attackRange: 0.4
   attackSpeed: 1
-  maxLeft: 6
-  maxRight: 8
+  maxLeft: 4
+  maxRight: 3
   moveRight: 1
   playerLayer:
     serializedVersion: 2
