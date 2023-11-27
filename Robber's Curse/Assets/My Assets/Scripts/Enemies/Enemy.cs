@@ -6,10 +6,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    protected float speed;
-    protected float jumpForce;
-    public float health;
-    protected float damage;
+    protected float speed = 0;
+    protected float jumpForce = 0;
+    public float health = 0;
+    protected float damage = 0;
     public bool isAlive = true;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float attackSpeed; // the lower speed, the faster attacks, works like a delay between attacks
@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     public int coinAmount = 0;
     public bool moneyDroped = false;
     public GameObject coin;
+
+    public float SensorRadius = 0; //for smart enemies
 
 
     //particles:
@@ -65,9 +67,29 @@ public class Enemy : MonoBehaviour
             dropMoney();
             Death();
         }
-
-
     }
+
+    protected void SmartEnemy()
+    {
+        if (isAlive)
+        {
+            StillAlive();
+            if (PlayerInRange())
+                Attack();
+            else
+            {
+                isAttacking = false;
+                FollowPlayer();
+            }
+        }
+        else
+        {
+            dropMoney();
+            Death();
+        }
+    }
+
+
     protected void movingLeftRight()
     {
         if (!isAttacking)
@@ -98,6 +120,36 @@ public class Enemy : MonoBehaviour
             float newPositionX = currentPositionX + (speed * direction * Time.deltaTime);
             transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
         }
+    }
+
+    protected void FollowPlayer()
+    {
+        if (!isAttacking)
+        {
+            float currentPositionX = transform.position.x;
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            animator.SetBool("Attack", false);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, SensorRadius);
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("Player"))
+                {
+                    animator.SetBool("Stand", false);
+                    if (currentPositionX > collider.transform.position.x)
+                        transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                    if (currentPositionX < collider.transform.position.x)
+                        transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                    animator.SetBool("Move", true);
+                    Vector3 direction = collider.transform.position - transform.position;
+                    direction.y = 0;
+                    transform.position += direction * speed * Time.deltaTime;
+                }
+                else
+                    animator.SetBool("Stand", true);
+            }
+        }
+
     }
     protected bool PlayerInRange()
     {

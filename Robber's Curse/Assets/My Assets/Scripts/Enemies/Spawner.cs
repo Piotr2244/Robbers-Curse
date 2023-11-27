@@ -108,8 +108,6 @@ public class Spawner : MonoBehaviour
             StartCoroutine(RemoveBarricade());
         }
         catch { };
-
-
     }
 
     private IEnumerator RemoveBarricade()
