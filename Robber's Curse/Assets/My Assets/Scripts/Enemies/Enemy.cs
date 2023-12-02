@@ -180,6 +180,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         blood.Play();
+        //Instantiate(blood, transform.position, Quaternion.identity);
         health -= damage;
     }
     protected void StillAlive()

@@ -22,6 +22,7 @@ public class InventoryBase : MonoBehaviour
         texts.Add("Small mana potion");     //4
         texts.Add("Mana potion");           //5
         texts.Add("Large mana potion");     //6
+        texts.Add("SpellBook");             //7
 
         ItemFunctions = new UseItem[]
             {
@@ -32,6 +33,7 @@ public class InventoryBase : MonoBehaviour
                 Item4Used,
                 Item5Used,
                 Item6Used,
+                Item7Used,
             };
     }
 
@@ -80,5 +82,16 @@ public class InventoryBase : MonoBehaviour
             hero.mana += 50;
         else
             hero.mana = hero.MaxMana;
+    }
+    public void Item7Used()
+    {
+        for (int x = 0; x < hero.spellLearned.Length; x++)
+        {
+            if (!hero.spellLearned[x])
+            {
+                hero.spellLearned[x] = true;
+                break;
+            }
+        }
     }
 }

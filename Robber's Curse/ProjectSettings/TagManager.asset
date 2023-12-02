@@ -7,6 +7,7 @@ TagManager:
   - Enviroment
   - Enemy
   - Menu
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,7 @@ TagManager:
     locked: 0
   - name: Pause
     uniqueID: 2640135401
+    locked: 0
+  - name: Game Over
+    uniqueID: 1349822643
     locked: 0

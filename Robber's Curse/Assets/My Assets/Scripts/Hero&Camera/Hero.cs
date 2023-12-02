@@ -25,17 +25,17 @@ public class Hero : MonoBehaviour
 
     private bool grounded = false;
     private bool combatIdle = false;
-    private bool isDead = false;
     private bool isAttacking = false;
+    private bool isDead = false;
 
     public Transform attackPoint;
     private Animator animator;
     private Rigidbody2D body2d;
-    private Sensor_Bandit m_groundSensor;
+    private Sensor_Bandit groundSensor;
     public LayerMask enemyLayers;
 
     ////// SPELLS //////
-    bool[] spellLearned = Enumerable.Repeat(true, 4).ToArray();// true means hero knows this spell
+    public bool[] spellLearned = Enumerable.Repeat(false, 5).ToArray();// true means hero knows this spell
     public int spellIndex = 0;
     public GameObject fireballPrefab; //INDEX 1
     public GameObject windSpellPrefab; //INDEX 2
@@ -45,6 +45,7 @@ public class Hero : MonoBehaviour
 
     //particles:
     public ParticleSystem blood;
+    public ParticleSystem toxicSplash;
 
     //current hero state
     private SingleState CurrentState;
@@ -56,6 +57,7 @@ public class Hero : MonoBehaviour
     //temp values
     private bool ToxicBoostActive = false;
     private float SpellOverloadCountdown = 0.0f;
+    private bool isReturningToLive = false;
     private void Awake()
     {
         SingleState.ChangeState += GetStateAtributes;
@@ -67,15 +69,33 @@ public class Hero : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         body2d = GetComponent<Rigidbody2D>();
-        m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
+        groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
         StartCoroutine(Regeneration());
+        StartCoroutine(FullToxineLevelHandler()); //
     }
 
     // Update is called once per frame
     void Update()
     {
         if (health <= 0)
+        {
             animator.SetBool("Death", true);
+            if (toxic < 95)
+            {
+                if (!isReturningToLive)
+                {
+                    isReturningToLive = true;
+                    StartCoroutine(ReturnToLive());
+                }
+            }
+            else if (!isDead)
+            {
+                isDead = true;
+                FinalDeath();
+            }
+
+
+        }
         else
         {
             groundHero();
@@ -91,13 +111,13 @@ public class Hero : MonoBehaviour
     private void groundHero()
     {
         //Check if character just landed on the ground
-        if (!grounded && m_groundSensor.State())
+        if (!grounded && groundSensor.State())
         {
             grounded = true;
             animator.SetBool("Grounded", grounded);
         }
         //Check if character just started falling
-        if (grounded && !m_groundSensor.State())
+        if (grounded && !groundSensor.State())
         {
             grounded = false;
             animator.SetBool("Grounded", grounded);
@@ -146,7 +166,7 @@ public class Hero : MonoBehaviour
             grounded = false;
             animator.SetBool("Grounded", grounded);
             body2d.velocity = new Vector2(body2d.velocity.x, jumpForce);
-            m_groundSensor.Disable(0.2f);
+            groundSensor.Disable(0.2f);
             UpdateState.Invoke(1, 0.01f, 2);
         }
 
@@ -234,6 +254,7 @@ public class Hero : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && ToxicBoostActive == false)
         {
+            toxicSplash.Play();
             ToxicBoostActive = true;
             StartCoroutine(ToxicBoostCorutine());
         }
@@ -392,6 +413,59 @@ public class Hero : MonoBehaviour
 
     }
 
+    private IEnumerator ReturnToLive()
+    {
+        yield return new WaitForSeconds(3);
+        health = Maxhealth;
+        animator.SetBool("Recover", true);
+        toxicSplash.Play();
+        toxic += 5;
+        yield return new WaitForSeconds(1);
+        animator.SetBool("Recover", false);
+        isReturningToLive = false;
+        UpdateState.Invoke(3, 1, 0);
+        UpdateState.Invoke(3, 1, 10);
+        UpdateState.Invoke(3, 1, 20);
+        UpdateState.Invoke(3, 1, 30);
+
+    }
+
+    private void FinalDeath()
+    {
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        if (gameManager != null)
+        {
+            GameOver gameOverScript = gameManager.GetComponent<GameOver>();
+            if (gameOverScript != null)
+            {
+                gameOverScript.StartCoroutine("GameIsOver");
+            }
+        }
+        for (int x = 0; x <= 50; x++)
+        {
+            toxicSplash.Play();
+            System.Random random = new System.Random();
+            int randomX = random.Next(-10, 10);
+            Vector3 playerPosition = transform.position;
+            playerPosition.x += randomX;
+            randomX = random.Next(-15, -5);
+            playerPosition.y += randomX;
+            Instantiate(DeathSpell, playerPosition, Quaternion.identity);
+        }
+    }
+
+    private IEnumerator FullToxineLevelHandler()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            if (toxic >= 100)
+            {
+                yield return new WaitForSeconds(1);
+                health -= 0.5f;
+            }
+        }
+    }
     private void SpellOverloadController(float time)
     {
         if (SpellOverloadCountdown > 0)

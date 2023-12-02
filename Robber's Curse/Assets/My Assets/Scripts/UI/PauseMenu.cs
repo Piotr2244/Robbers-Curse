@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public bool isPaused;
+    public bool inControls = false;
     public GameObject ControlsPanel;
     public GameObject MainButtons;
     public void Start()
@@ -17,9 +19,9 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (isPaused)
+            if (isPaused && !inControls)
                 ResumeGame();
-            else
+            else if (!isPaused)
                 Pause();
         }
     }
@@ -33,12 +35,14 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        ControlsPanel.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
     }
 
     public void ControlsMenu()
     {
+        inControls = true;
         try
         {
             ControlsPanel.SetActive(true);
@@ -60,5 +64,16 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.Log("Menu buttons not connected");
         }
+        inControls = false;
+    }
+
+    public void returnToMenu()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+                    Application.Quit();
+#endif
+        //SceneManager.LoadScene("Main Menu");
     }
 }
