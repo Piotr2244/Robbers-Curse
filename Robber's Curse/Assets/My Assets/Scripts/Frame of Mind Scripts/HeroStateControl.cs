@@ -29,15 +29,44 @@ public class HeroStateControl : MonoBehaviour
         StartCoroutine(OverloadController());
 
     }
-    private void ForceSetAtributes(int newFatigue, int newInjuries, int newSickness)
+    private void ForceSetAtributes(int newFatigue, int newInjuries, int newSickness, int mode)// mode1 = set, mode2 = ++, mode3 = --;
     {
-        currentFatigue = newFatigue;
-        currentInjuries = newInjuries;
-        currentSickness = newSickness;
+        if (mode == 1)
+        {
+            currentFatigue = newFatigue;
+            currentInjuries = newInjuries;
+            currentSickness = newSickness;
+        }
+        if (mode == 2)
+        {
+            currentFatigue += newFatigue;
+            if (currentFatigue > 100)
+                currentFatigue = 100;
+            currentInjuries += newInjuries;
+            if (currentInjuries > 100)
+                currentInjuries = 100;
+            currentSickness += newSickness;
+            if (currentSickness > 100)
+                currentSickness = 100;
+        }
+        if (mode == 3)
+        {
+            currentFatigue -= newFatigue;
+            if (currentFatigue < 0)
+                currentFatigue = 0;
+            currentInjuries -= newInjuries;
+            if (currentInjuries < 0)
+                currentInjuries = 0;
+            currentSickness -= newSickness;
+            if (currentSickness < 0)
+                currentSickness = 0;
+        }
+        UpdateCurrentState();
     }
     private void Awake()
     {
         Hero.UpdateState += RequestAtributesUpdate;
+        TavernController.UpdateState += ForceSetAtributes;
     }
     private IEnumerator OverloadController()
     {
@@ -201,6 +230,7 @@ public class HeroStateControl : MonoBehaviour
     private void OnDisable()
     {
         Hero.UpdateState -= RequestAtributesUpdate;
+        TavernController.UpdateState -= ForceSetAtributes;
     }
 
 }

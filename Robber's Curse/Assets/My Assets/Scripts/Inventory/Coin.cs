@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
     private void Start()
     {
         System.Random random = new System.Random();
-        value = random.Next(1, 5);
+        value = random.Next(2, 5);
         rb = GetComponent<Rigidbody2D>();
         JumpOnStart();
     }
