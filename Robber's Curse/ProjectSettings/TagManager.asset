@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enviroment
   - Enemy
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: UIText
     uniqueID: 3317142017
+    locked: 0
+  - name: Pause
+    uniqueID: 2640135401
     locked: 0

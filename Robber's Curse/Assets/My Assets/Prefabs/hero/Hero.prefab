@@ -128,7 +128,7 @@ Rigidbody2D:
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0d34e8841fa64dc49b983dd5f815b81d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
   jumpForce: 9
   Maxhealth: 20
   health: 20
-  MaxMana: 200
-  mana: 200
+  MaxMana: 30
+  mana: 30
   toxic: 0
   damage: 2
   attackRange: 0.5
