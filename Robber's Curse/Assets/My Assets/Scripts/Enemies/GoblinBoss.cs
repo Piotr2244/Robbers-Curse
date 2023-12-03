@@ -10,6 +10,11 @@ public class GoblinBoss : Enemy
     public GameObject Closingbarricade;
     private bool isRemoving = false;
     private bool closingGate = false;
+
+    public delegate void ChangeTrack(int index = 2);
+    public static event ChangeTrack ChangeMusic;
+    public delegate void RestoreTrack();
+    public static event RestoreTrack RestoreMusic;
     public GoblinBoss()
     {
         speed = 1.0f;
@@ -44,6 +49,7 @@ public class GoblinBoss : Enemy
     private IEnumerator RemoveBarricade()
     {
         isRemoving = true;
+        RestoreMusic();
         for (int x = 0; x < 2000; x++)
         {
             if (barricade != null)
@@ -52,10 +58,12 @@ public class GoblinBoss : Enemy
                 yield return new WaitForSeconds(0.1f);
             }
         }
+
     }
 
     private IEnumerator CloseGate()
     {
+        ChangeMusic(3);
         closingGate = true;
         for (int x = 0; x < 200; x++)
         {

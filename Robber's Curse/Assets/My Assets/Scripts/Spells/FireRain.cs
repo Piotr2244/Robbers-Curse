@@ -6,11 +6,13 @@ public class FireRain : MonoBehaviour
 {
     public float damage = 10f;
     private Animator animator;
+    private AudioSource src;
     void Start()
     {
         transform.Rotate(new Vector3(0, 0, -90));
         animator = GetComponent<Animator>();
         animator.SetBool("hit", false);
+        src = transform.GetComponent<AudioSource>();
 
     }
 
@@ -34,6 +36,7 @@ public class FireRain : MonoBehaviour
     }
     private IEnumerator DestroyAfterDelay()
     {
+        src.Play();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {

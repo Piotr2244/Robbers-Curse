@@ -58,6 +58,17 @@ public class Hero : MonoBehaviour
     private bool ToxicBoostActive = false;
     private float SpellOverloadCountdown = 0.0f;
     private bool isReturningToLive = false;
+
+    //sounds
+    public AudioSource audioSrc;
+    public AudioClip MeleeSound;
+    public AudioClip FireBallSound;
+    public AudioClip MagicWindSound;
+    public AudioClip FireCloakSound;
+    public AudioClip SoulSpellSound;
+    public AudioClip jumpSound;
+    public AudioClip stepSound;
+    public AudioClip landSound;
     private void Awake()
     {
         SingleState.ChangeState += GetStateAtributes;
@@ -113,6 +124,8 @@ public class Hero : MonoBehaviour
         //Check if character just landed on the ground
         if (!grounded && groundSensor.State())
         {
+            audioSrc.clip = landSound;
+            audioSrc.Play();
             grounded = true;
             animator.SetBool("Grounded", grounded);
         }
@@ -162,6 +175,8 @@ public class Hero : MonoBehaviour
         //Jump
         else if (Input.GetKeyDown("space") && grounded)
         {
+            audioSrc.clip = jumpSound;
+            audioSrc.Play();
             animator.SetTrigger("Jump");
             grounded = false;
             animator.SetBool("Grounded", grounded);
@@ -172,7 +187,11 @@ public class Hero : MonoBehaviour
 
         //Run
         else if (Mathf.Abs(inputX) > Mathf.Epsilon)
+        {
             animator.SetInteger("AnimState", 2);
+            //audioSrc.clip = stepSound;
+            //audioSrc.Play();
+        }
 
         //Combat Idle
         else if (combatIdle)
@@ -187,6 +206,7 @@ public class Hero : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
+
             StartCoroutine(MeleeAttackCoroutine());
         }
     }
@@ -217,7 +237,8 @@ public class Hero : MonoBehaviour
         isAttacking = true;
         animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
-
+        audioSrc.clip = MeleeSound;
+        audioSrc.Play();
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemy in HitEnemies)
@@ -254,6 +275,7 @@ public class Hero : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && ToxicBoostActive == false)
         {
+
             toxicSplash.Play();
             ToxicBoostActive = true;
             StartCoroutine(ToxicBoostCorutine());
@@ -269,6 +291,8 @@ public class Hero : MonoBehaviour
                 {
                     if (mana >= 8f)
                     {
+                        audioSrc.clip = FireBallSound;
+                        audioSrc.Play();
                         mana -= 8f;
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
@@ -283,6 +307,8 @@ public class Hero : MonoBehaviour
                 {
                     if (mana >= 5f)
                     {
+                        audioSrc.clip = MagicWindSound;
+                        audioSrc.Play();
                         mana -= 5f;
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
@@ -297,6 +323,8 @@ public class Hero : MonoBehaviour
                 {
                     if (mana >= 10f)
                     {
+                        audioSrc.clip = FireCloakSound;
+                        audioSrc.Play();
                         mana -= 10f;
                         Vector3 playerPosition = transform.position;
                         playerPosition.y += 0.5f;
@@ -314,6 +342,8 @@ public class Hero : MonoBehaviour
                         mana -= 20f;
                         float randomX;
                         System.Random random = new System.Random();
+                        audioSrc.clip = SoulSpellSound;
+                        audioSrc.Play();
                         for (int x = 0; x <= 10; x++)
                         {
                             randomX = random.Next(-10, 10);
@@ -338,6 +368,8 @@ public class Hero : MonoBehaviour
                         System.Random random = new System.Random();
                         for (int x = 0; x <= 30; x++)
                         {
+                            audioSrc.clip = FireBallSound;
+                            audioSrc.Play();
                             randomX = random.Next(-15, 15);
                             Vector3 playerPosition = transform.position;
                             playerPosition.x += randomX;
@@ -394,6 +426,8 @@ public class Hero : MonoBehaviour
 
     private IEnumerator ToxicBoostCorutine()
     {
+        audioSrc.clip = FireCloakSound;
+        audioSrc.Play();
         toxic += 1;
         jumpForce += 6;
         damage += 2;
@@ -410,6 +444,8 @@ public class Hero : MonoBehaviour
         speed -= 2;
         UpdateState.Invoke(3, 1, 20);
         ToxicBoostActive = false;
+        audioSrc.clip = FireCloakSound;
+        audioSrc.Play();
 
     }
 
@@ -421,6 +457,8 @@ public class Hero : MonoBehaviour
         toxicSplash.Play();
         toxic += 5;
         yield return new WaitForSeconds(1);
+        audioSrc.clip = FireCloakSound;
+        audioSrc.Play();
         animator.SetBool("Recover", false);
         isReturningToLive = false;
         UpdateState.Invoke(3, 1, 0);

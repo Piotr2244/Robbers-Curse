@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
 
     public float SensorRadius = 0; //for smart enemies
 
-
+    //sounds:
+    private AudioSource src;
     //particles:
     public ParticleSystem blood;
 
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
         body2d = GetComponent<Rigidbody2D>();
         maxLeft = (-maxLeft) + transform.position.x;
         maxRight += transform.position.x;
+        src = transform.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -199,6 +201,7 @@ public class Enemy : MonoBehaviour
 
         foreach (Collider2D enemy in HitEnemies)
         {
+            src.Play();
             enemy.GetComponent<Hero>().TakeDamage(damage);
         }
 

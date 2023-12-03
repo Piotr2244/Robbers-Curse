@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static TavernController;
 
 public class TavernController : MonoBehaviour
 {
@@ -24,8 +25,13 @@ public class TavernController : MonoBehaviour
     private bool strTrained = false, speedTrained = false, jumpTrained = false;
     public TextMeshProUGUI TrainStrText, TrainSpeedText, TrainJumpText;
 
+    //DELEGATES
     public delegate void SendStateUpdate(int newFatigue, int newInjuries, int newSickness, int mode);
     public static event SendStateUpdate UpdateState;
+    public delegate void ChangeTrack(int index = 2);
+    public static event ChangeTrack ChangeMusic;
+    public delegate void RestoreTrack();
+    public static event RestoreTrack RestoreMusic;
     void Start()
     {
         TrainStrText = transform.Find("TrainStr/Text (TMP)").GetComponent<TextMeshProUGUI>();
@@ -47,7 +53,14 @@ public class TavernController : MonoBehaviour
 
         setPrices();
     }
-
+    private void OnEnable()
+    {
+        ChangeMusic(2);
+    }
+    private void OnDisable()
+    {
+        RestoreMusic();
+    }
     private void setPrices()
     {
         System.Random random = new System.Random();
