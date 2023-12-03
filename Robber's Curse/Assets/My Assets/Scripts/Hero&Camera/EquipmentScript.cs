@@ -24,8 +24,28 @@ public class EquipmentScript : MonoBehaviour
     public Item item3;
     public Item item4;
 
+    //LOADING STATS FROM ANOTHER SCENE
+    public bool LoadFromPrev = false;
+    public HeroStatus heroStatus;
+    private void LoadStats()
+    {
+        if (LoadFromPrev)
+        {
+            GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
+            if (statusHolder != null)
+            {
+                heroStatus = statusHolder.GetComponent<HeroStatus>();
+                item1.ItemIndex = heroStatus.item1;
+                item2.ItemIndex = heroStatus.item2;
+                item3.ItemIndex = heroStatus.item3;
+                item4.ItemIndex = heroStatus.item4;
+            }
+        }
+    }
+
     private void Awake()
     {
+
         goldText = transform.Find("GoldBar/gold").GetComponent<Text>();
         strengthText = transform.Find("StrengthBar/strength").GetComponent<Text>();
         speedText = transform.Find("SpeedBar/speed").GetComponent<Text>();
@@ -41,6 +61,8 @@ public class EquipmentScript : MonoBehaviour
         item2 = transform.Find("Equipment/Eq2").GetComponent<Item>();
         item3 = transform.Find("Equipment/Eq3").GetComponent<Item>();
         item4 = transform.Find("Equipment/Eq4").GetComponent<Item>();
+
+        LoadStats();
 
         ItemToCollect.OnItemCollision += GetItem;
 

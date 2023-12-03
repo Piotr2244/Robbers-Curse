@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class HeroStateControl : MonoBehaviour
 {
@@ -19,8 +20,27 @@ public class HeroStateControl : MonoBehaviour
     private Image DisplayImage;
     private Text DisplayText;
 
+    //LOADING STATS FROM ANOTHER SCENE
+    public bool LoadFromPrev = false;
+    public HeroStatus heroStatus;
+    private void LoadStats()
+    {
+        if (LoadFromPrev)
+        {
+            GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
+            if (statusHolder != null)
+            {
+                heroStatus = statusHolder.GetComponent<HeroStatus>();
+                currentFatigue = heroStatus.currentFatigue;
+                currentInjuries = heroStatus.currentInjuries;
+                currentSickness = heroStatus.currentSickness;
+            }
+        }
+    }
+
     private void Start()
     {
+        LoadStats();
         createStates();
         DisplayImage = GetComponent<Image>();
         DisplayText = transform.Find("text").GetComponent<Text>();

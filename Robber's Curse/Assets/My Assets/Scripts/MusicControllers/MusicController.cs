@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    public AudioSource audioSrc;
+    private AudioSource audioSrc;
     public AudioClip[] tracks;
     // 0 - Main Menu
     // 1 - Level 1

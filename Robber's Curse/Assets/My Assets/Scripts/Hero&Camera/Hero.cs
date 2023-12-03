@@ -69,11 +69,39 @@ public class Hero : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip stepSound;
     public AudioClip landSound;
+
+    //LOADING STATS FROM ANOTHER SCENE
+    public bool LoadFromPrev = false;
+    public HeroStatus heroStatus;
+    private void LoadStats()
+    {
+        if (LoadFromPrev)
+        {
+            GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
+            if (statusHolder != null)
+            {
+                heroStatus = statusHolder.GetComponent<HeroStatus>();
+
+                speed = heroStatus.speed;
+                jumpForce = heroStatus.jumpForce;
+                Maxhealth = heroStatus.Maxhealth;
+                health = heroStatus.health;
+                MaxMana = heroStatus.MaxMana;
+                mana = heroStatus.mana;
+                toxic = heroStatus.toxic;
+                damage = heroStatus.damage;
+                attackRange = heroStatus.attackRange;
+                gold = heroStatus.gold;
+            }
+        }
+    }
     private void Awake()
     {
         SingleState.ChangeState += GetStateAtributes;
         SingleState.UndoState += UndoStateAtributes;
         Coin.OnItemCollision += CollectGold;
+        //DontDestroyOnLoad(gameObject);
+        LoadStats();
 
     }
     void Start()
