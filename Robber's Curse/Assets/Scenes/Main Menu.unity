@@ -427,6 +427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2450024233229505294, guid: 0abdede79c948ea469cca6a5697a35a9, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2450024234170691143, guid: 0abdede79c948ea469cca6a5697a35a9, type: 3}
       propertyPath: m_Name
       value: MainMenu

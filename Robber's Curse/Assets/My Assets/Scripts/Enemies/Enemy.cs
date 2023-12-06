@@ -201,7 +201,11 @@ public class Enemy : MonoBehaviour
 
         foreach (Collider2D enemy in HitEnemies)
         {
-            src.Play();
+            try
+            {
+                src.Play();
+            }
+            catch { }
             enemy.GetComponent<Hero>().TakeDamage(damage);
         }
 
