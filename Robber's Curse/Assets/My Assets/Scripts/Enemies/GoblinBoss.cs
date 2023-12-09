@@ -15,6 +15,8 @@ public class GoblinBoss : Enemy
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
     public static event RestoreTrack RestoreMusic;
+
+    private bool startedChasing = false;
     public GoblinBoss()
     {
         speed = 1.0f;
@@ -37,8 +39,9 @@ public class GoblinBoss : Enemy
             spawner.spawn = false;
         }
 
-        if (animator.GetBool("Stand") == false && !isFighting)
+        if (isChasing && !startedChasing)
         {
+            startedChasing = true;
             if (spawner != null)
                 spawner.ForceStartSpawn();
             if (!closingGate)

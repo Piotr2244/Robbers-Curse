@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     public GameObject coin;
 
     public float SensorRadius = 0; //for smart enemies
-
+    protected bool isChasing = false;
     //sounds:
     private AudioSource src;
     //particles:
@@ -80,6 +80,7 @@ public class Enemy : MonoBehaviour
                 Attack();
             else
             {
+                animator.SetBool("Stand", false);
                 isAttacking = false;
                 FollowPlayer();
             }
@@ -137,6 +138,7 @@ public class Enemy : MonoBehaviour
             {
                 if (collider.CompareTag("Player"))
                 {
+                    isChasing = true;
                     animator.SetBool("Stand", false);
                     if (currentPositionX > collider.transform.position.x)
                         transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
@@ -248,4 +250,3 @@ public class Enemy : MonoBehaviour
     }
 
 }
-

@@ -25,6 +25,8 @@ public class MusicController : MonoBehaviour
         TavernController.RestoreMusic += RestorePrevTrack;
         GoblinBoss.ChangeMusic += ChangeTrack;
         GoblinBoss.RestoreMusic += RestorePrevTrack;
+        DemonBoss.ChangeMusic += ChangeTrack;
+        DemonBoss.RestoreMusic += RestorePrevTrack;
     }
     private void OnDisable()
     {
@@ -32,6 +34,8 @@ public class MusicController : MonoBehaviour
         TavernController.RestoreMusic -= RestorePrevTrack;
         GoblinBoss.ChangeMusic -= ChangeTrack;
         GoblinBoss.RestoreMusic -= RestorePrevTrack;
+        DemonBoss.ChangeMusic -= ChangeTrack;
+        DemonBoss.RestoreMusic -= RestorePrevTrack;
     }
 
     void PlayTrack(int index)

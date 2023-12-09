@@ -141,11 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25451b1e2d3fb304289745216cd3481d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSrc: {fileID: 0}
   tracks:
   - {fileID: 8300000, guid: 8d87a71e43a441747914899c420b4826, type: 3}
   - {fileID: 8300000, guid: 58373c397420bf243b32d274a38f72c8, type: 3}
   - {fileID: 8300000, guid: fa12cfe749020c74aab8f5e147582c30, type: 3}
   - {fileID: 8300000, guid: 2796785dad46f5e41a0d44a34abf326e, type: 3}
-  currentTrackIndex: 1
+  - {fileID: 8300000, guid: 3fc0fc27ebf04834baa4edb20a405aef, type: 3}
+  - {fileID: 8300000, guid: 66b315e37ecf3f942bc1cb0e59c775b7, type: 3}
+  currentTrackIndex: 4
   PrevTrackIndex: 0
