@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 {
 
     protected float speed = 0;
-    protected float jumpForce = 0;
     public float health = 0;
     protected float damage = 0;
     public bool isAlive = true;
@@ -32,7 +31,7 @@ public class Enemy : MonoBehaviour
     public float SensorRadius = 0; //for smart enemies
     protected bool isChasing = false;
     //sounds:
-    private AudioSource src;
+    public AudioSource src;
     //particles:
     public ParticleSystem blood;
 
@@ -166,6 +165,11 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
         isAttacking = true;
         animator.SetBool("Attack", true);
+        try
+        {
+            animator.SetBool("Jump", false);
+        }
+        catch { }
         Vector2 pos = transform.position;
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(pos, attackRange, playerLayer);
 
