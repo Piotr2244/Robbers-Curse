@@ -14,6 +14,7 @@ public class FireBall : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetBool("hit", false);
+        StartCoroutine(perish());
     }
 
     void Update()
@@ -49,12 +50,18 @@ public class FireBall : MonoBehaviour
             animator.SetBool("hit", true);
             speed = 1;
             StartCoroutine(DestroyAfterDelay());
+
         }
     }
 
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
+    private IEnumerator perish()
+    {
+        yield return new WaitForSeconds(15f);
         Destroy(gameObject);
     }
 }

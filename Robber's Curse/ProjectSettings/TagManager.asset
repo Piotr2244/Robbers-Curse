@@ -9,6 +9,7 @@ TagManager:
   - Menu
   - GameManager
   - StatusHolder
+  - Text
   layers:
   - Default
   - TransparentFX

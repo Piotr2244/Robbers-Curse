@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HeroStatus : MonoBehaviour
@@ -24,7 +25,7 @@ public class HeroStatus : MonoBehaviour
     public float damage = 0f;
     public float attackRange = 0f;
     public float gold = 0;
-
+    public bool[] spellLearned = Enumerable.Repeat(false, 5).ToArray();
     //equipment
     public int item1;
     public int item2;
@@ -54,6 +55,7 @@ public class HeroStatus : MonoBehaviour
         damage = heroLoad.damage;
         attackRange = heroLoad.attackRange;
         gold = heroLoad.gold;
+        spellLearned = heroLoad.spellLearned;
 
         item1 = equipmentLoad.item1.ItemIndex;
         item2 = equipmentLoad.item2.ItemIndex;

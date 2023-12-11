@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public float maxLeft;
     public float maxRight;
     public bool moveRight;
+    public bool fromSpawner = false;
 
     public LayerMask playerLayer;
     protected Animator animator;
@@ -67,6 +68,7 @@ public class Enemy : MonoBehaviour
         {
             dropMoney();
             Death();
+            StartCoroutine(perish());
         }
     }
 
@@ -165,11 +167,11 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
         isAttacking = true;
         animator.SetBool("Attack", true);
-        try
+        if (animator != null)
         {
             animator.SetBool("Jump", false);
         }
-        catch { }
+
         Vector2 pos = transform.position;
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(pos, attackRange, playerLayer);
 
@@ -252,5 +254,15 @@ public class Enemy : MonoBehaviour
                     Instantiate(coin, enemyPos, Quaternion.identity);
             }
     }
+
+    private IEnumerator perish()
+    {
+        if (!fromSpawner)
+        {
+            yield return new WaitForSeconds(5f);
+            Destroy(gameObject);
+        }
+    }
+
 
 }

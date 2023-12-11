@@ -55,6 +55,7 @@ public class Spawner : MonoBehaviour
             newEnemy.maxLeft = maxLeft;
             newEnemy.maxRight = maxRight;
             newEnemy.isAlive = true;
+            newEnemy.fromSpawner = true;
             if (x % 2 == 0)
                 newEnemy.moveRight = true;
             else
