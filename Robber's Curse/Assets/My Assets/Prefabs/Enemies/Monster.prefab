@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2876994064983913077}
   m_Layer: 7
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   maxLeft: 0
   maxRight: 0
   moveRight: 1
+  fromSpawner: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -195,6 +196,7 @@ MonoBehaviour:
   moneyDroped: 0
   coin: {fileID: 3529924548083368553, guid: 183879f675ed74346907554e0896c085, type: 3}
   SensorRadius: 10
+  src: {fileID: 0}
   blood: {fileID: 8835659680551198804}
 --- !u!50 &2876994064983913077
 Rigidbody2D:

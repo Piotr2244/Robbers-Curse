@@ -77,22 +77,32 @@ public class Hero : MonoBehaviour
     {
         if (LoadFromPrev)
         {
-            GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
-            if (statusHolder != null)
+            while (true)
             {
-                heroStatus = statusHolder.GetComponent<HeroStatus>();
+                GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
+                if (statusHolder != null)
+                {
+                    heroStatus = statusHolder.GetComponent<HeroStatus>();
 
-                speed = heroStatus.speed;
-                jumpForce = heroStatus.jumpForce;
-                Maxhealth = heroStatus.Maxhealth;
-                health = heroStatus.health;
-                MaxMana = heroStatus.MaxMana;
-                mana = heroStatus.mana;
-                toxic = heroStatus.toxic;
-                damage = heroStatus.damage;
-                attackRange = heroStatus.attackRange;
-                gold = heroStatus.gold;
+                    speed = heroStatus.speed;
+                    jumpForce = heroStatus.jumpForce;
+                    Maxhealth = heroStatus.Maxhealth;
+                    health = heroStatus.health;
+                    MaxMana = heroStatus.MaxMana;
+                    mana = heroStatus.mana;
+                    toxic = heroStatus.toxic;
+                    damage = heroStatus.damage;
+                    attackRange = heroStatus.attackRange;
+                    gold = heroStatus.gold;
+                    spellLearned = heroStatus.spellLearned;
+                    break;
+                }
+                else
+                {
+                    Destroy(statusHolder);
+                }
             }
+
         }
     }
     private void Awake()

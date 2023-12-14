@@ -765,6 +765,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8768237556831890657, guid: bbda79eaeb6e7d344a5ab4362470e175, type: 2}
     - target: {fileID: 2450024232912758867, guid: 0abdede79c948ea469cca6a5697a35a9, type: 3}
+      propertyPath: m_text
+      value: 'Some graphics used in game are made by internet authors: \n Stephen
+        "Redshrike" Challener as graphic artist and William.Thompsonj as contributor
+        \n Jordan Irwin \n  Wiktor Hahn (Viktor.Hahn@web.de) \n https://creativecommons.org/licenses/by/4.0/
+        \n \n Most graphics are taken from Unity Asset Store, some of them were generated
+        by AI with https://www.fotor.com'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450024232912758867, guid: 0abdede79c948ea469cca6a5697a35a9, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: bbda79eaeb6e7d344a5ab4362470e175, type: 2}

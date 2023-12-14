@@ -14,12 +14,14 @@ public class DialogScript : MonoBehaviour
         textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
         TextTrigger.OnDisplayText += DisplayText;
         MainMenu.OnDisplayText += DisplayDialog;
+        EvilHero.OnDisplayText += DisplayDialog;
     }
 
     private void OnDisable()
     {
         TextTrigger.OnDisplayText -= DisplayText;
         MainMenu.OnDisplayText -= DisplayDialog;
+        EvilHero.OnDisplayText -= DisplayDialog;
     }
 
     public void DisplayText(string text, float displayTime = 10.0f)
@@ -48,6 +50,7 @@ public class DialogScript : MonoBehaviour
             yield return new WaitForSeconds(displayTime);
         }
         yield return new WaitForSeconds(afterPause);
+        textMeshPro.text = "";
 
     }
 }

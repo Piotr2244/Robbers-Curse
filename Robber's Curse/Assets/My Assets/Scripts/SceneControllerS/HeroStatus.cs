@@ -67,26 +67,4 @@ public class HeroStatus : MonoBehaviour
         currentSickness = stateLoad.currentSickness;
     }
 
-    //public void LoadStatus()
-    //{
-    //    heroLoad.speed = speed;
-    //    heroLoad.jumpForce = jumpForce;
-    //    heroLoad.Maxhealth = Maxhealth;
-    //    heroLoad.health = health;
-    //    heroLoad.MaxMana = MaxMana;
-    //    heroLoad.mana = mana;
-    //    heroLoad.toxic = toxic;
-    //    heroLoad.damage = damage;
-    //    heroLoad.attackRange = attackRange;
-    //    heroLoad.gold = gold;
-
-    //    equipmentLoad.item1 = item1;
-    //    equipmentLoad.item2 = item2;
-    //    equipmentLoad.item3 = item3;
-    //    equipmentLoad.item4 = item4;
-
-    //    stateLoad.currentFatigue = currentFatigue;
-    //    stateLoad.currentInjuries = currentInjuries;
-    //    stateLoad.currentSickness = currentSickness;
-    //}
 }

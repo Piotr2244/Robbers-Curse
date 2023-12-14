@@ -13,7 +13,7 @@ public class EvilHero : Enemy
     private float jumpCooldown = 0;
     private bool canJump = true;
     private float jumpForce = 10;
-
+    public string[] plotStory;
     public delegate void ChangeTrack(int index = 7);
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
@@ -21,10 +21,15 @@ public class EvilHero : Enemy
 
     private bool startedChasing = false;
     private bool empowered = false;
+    private bool afterDialog = false;
 
     public ParticleSystem toxic;
 
     public AudioSource toxicSound;
+
+    public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
+    public static event DisplayTextDelegate OnDisplayText;
+
     public EvilHero()
     {
         speed = 2.0f;
@@ -39,11 +44,14 @@ public class EvilHero : Enemy
         animator = GetComponent<Animator>();
         StartCoroutine(CheckPlayerAbove());
         toxicSound = transform.GetComponent<AudioSource>();
+        StartCoroutine(CheckForPlayerCoroutine());
     }
     void Update()
     {
         //animator.SetBool("Move", true);
-        SmartEnemy();
+        if (afterDialog)
+            SmartEnemy();
+
         if (jumpCooldown > 0)
         {
             jumpCooldown -= Time.deltaTime;
@@ -143,4 +151,35 @@ public class EvilHero : Enemy
             jumpCooldown = 3f;
         }
     }
+
+    IEnumerator CheckForPlayerCoroutine()
+    {
+        while (true)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+            if (playerObject != null)
+            {
+                float distanceToPlayer = Vector2.Distance(transform.position, playerObject.transform.position);
+
+                if (distanceToPlayer <= 5f)
+                {
+                    Debug.Log("Gracz jest w zasięgu");
+                    OnDisplayText.Invoke(plotStory, 10, 1);
+
+                    Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
+                    playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+
+                    yield return new WaitForSeconds(41);
+
+                    playerRigidbody.constraints = RigidbodyConstraints2D.None;
+                    playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    afterDialog = true;
+                    break;
+                }
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898289585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.78, y: 1.21, z: 0}
+  m_LocalPosition: {x: -0.483, y: 1.21, z: 0}
   m_LocalScale: {x: 1.1999999, y: 1.1999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 50959880312528810}
   - component: {fileID: 61346583712760016}
   - component: {fileID: 1707780778}
+  - component: {fileID: 1707780783}
   m_Layer: 7
   m_Name: HeavyBandit
   m_TagString: Enemy
@@ -209,6 +210,7 @@ MonoBehaviour:
   maxLeft: 0
   maxRight: 0
   moveRight: 0
+  fromSpawner: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -216,14 +218,116 @@ MonoBehaviour:
   coinAmount: 100
   moneyDroped: 0
   coin: {fileID: 3529924548083368553, guid: 183879f675ed74346907554e0896c085, type: 3}
-  SensorRadius: 5
+  SensorRadius: 4
   src: {fileID: 0}
   blood: {fileID: 7059388627630004043}
   isFighting: 0
   barricade: {fileID: 0}
   Closingbarricade: {fileID: 0}
-  toxic: {fileID: 0}
+  plotStory:
+  - Ah, another cursed traveller searching for his redemption
+  - A pity, we were both contaminated by the same illness and we both search for
+    the cure
+  - I know that some powerful beings on this mountain can heal this curse
+  - But I don't think they will share their gifts for both of us...
+  toxic: {fileID: 937156031479693853}
   toxicSound: {fileID: 0}
+--- !u!82 &1707780783
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463392086428580}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1517539160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,5 +459,10 @@ PrefabInstance:
 --- !u!4 &937156031479693852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6733923165950659420, guid: 48a7a2a7f0bc3784890cd98e8a7d7377, type: 3}
+  m_PrefabInstance: {fileID: 5796907889146005824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &937156031479693853 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6733923165950659421, guid: 48a7a2a7f0bc3784890cd98e8a7d7377, type: 3}
   m_PrefabInstance: {fileID: 5796907889146005824}
   m_PrefabAsset: {fileID: 0}
