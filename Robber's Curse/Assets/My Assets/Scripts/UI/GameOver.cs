@@ -29,4 +29,13 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSeconds(3f);
         MenuButton.SetActive(true);
     }
+
+    public void ExitGameClick()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+                    Application.Quit();
+#endif
+    }
 }

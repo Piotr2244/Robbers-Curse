@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     public int coinAmount = 0;
     public bool moneyDroped = false;
     public GameObject coin;
+    protected bool Canjump = false;
 
     public float SensorRadius = 0; //for smart enemies
     protected bool isChasing = false;
@@ -167,7 +168,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
         isAttacking = true;
         animator.SetBool("Attack", true);
-        if (animator != null)
+        if (animator != null && Canjump)
         {
             animator.SetBool("Jump", false);
         }

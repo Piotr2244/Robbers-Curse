@@ -15,6 +15,7 @@ public class DialogScript : MonoBehaviour
         TextTrigger.OnDisplayText += DisplayText;
         MainMenu.OnDisplayText += DisplayDialog;
         EvilHero.OnDisplayText += DisplayDialog;
+        WizardBoss.OnDisplayText += DisplayDialog;
     }
 
     private void OnDisable()
@@ -22,6 +23,7 @@ public class DialogScript : MonoBehaviour
         TextTrigger.OnDisplayText -= DisplayText;
         MainMenu.OnDisplayText -= DisplayDialog;
         EvilHero.OnDisplayText -= DisplayDialog;
+        WizardBoss.OnDisplayText -= DisplayDialog;
     }
 
     public void DisplayText(string text, float displayTime = 10.0f)

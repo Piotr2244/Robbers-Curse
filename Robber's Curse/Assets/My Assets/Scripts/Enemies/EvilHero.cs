@@ -37,6 +37,7 @@ public class EvilHero : Enemy
         health = 100.0f;
         attackSpeed = 1.0f;
         damage = 4.0f;
+        canJump = true;
     }
     private void Start()
     {
@@ -164,7 +165,6 @@ public class EvilHero : Enemy
 
                 if (distanceToPlayer <= 5f)
                 {
-                    Debug.Log("Gracz jest w zasięgu");
                     OnDisplayText.Invoke(plotStory, 10, 1);
 
                     Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();

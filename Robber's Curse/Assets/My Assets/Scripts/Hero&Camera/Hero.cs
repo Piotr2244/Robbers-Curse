@@ -77,12 +77,17 @@ public class Hero : MonoBehaviour
     {
         if (LoadFromPrev)
         {
-            while (true)
+            for (int x = 1; x < 100; x++)
             {
                 GameObject statusHolder = GameObject.FindGameObjectWithTag("StatusHolder");
                 if (statusHolder != null)
                 {
                     heroStatus = statusHolder.GetComponent<HeroStatus>();
+
+                    if (heroStatus.speed == 0)
+                    {
+                        continue;
+                    }
 
                     speed = heroStatus.speed;
                     jumpForce = heroStatus.jumpForce;
@@ -121,6 +126,7 @@ public class Hero : MonoBehaviour
         groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
         StartCoroutine(Regeneration());
         StartCoroutine(FullToxineLevelHandler()); //
+        StartCoroutine(CheckMinusStats());
     }
 
     // Update is called once per frame
@@ -561,5 +567,19 @@ public class Hero : MonoBehaviour
     {
         gold += coin.value;
         Destroy(coin.gameObject);
+    }
+    private IEnumerator CheckMinusStats()
+    {
+        while (true)
+        {
+            if (damage < 0.5f)
+                damage = 0.5f;
+            if (speed < 0.5f)
+                speed = 0.5f;
+            if (jumpForce < 0.5f)
+                jumpForce = 0.5f;
+            yield return new WaitForSeconds(1.0f);
+        }
+
     }
 }
