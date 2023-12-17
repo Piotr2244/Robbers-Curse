@@ -16,6 +16,8 @@ public class DialogScript : MonoBehaviour
         MainMenu.OnDisplayText += DisplayDialog;
         EvilHero.OnDisplayText += DisplayDialog;
         WizardBoss.OnDisplayText += DisplayDialog;
+        WizardCopy.OnDisplayText += DisplayDialog;
+        GoodEnding.OnDisplayText += DisplayDialog;
     }
 
     private void OnDisable()
@@ -24,6 +26,8 @@ public class DialogScript : MonoBehaviour
         MainMenu.OnDisplayText -= DisplayDialog;
         EvilHero.OnDisplayText -= DisplayDialog;
         WizardBoss.OnDisplayText -= DisplayDialog;
+        WizardCopy.OnDisplayText -= DisplayDialog;
+        GoodEnding.OnDisplayText -= DisplayDialog;
     }
 
     public void DisplayText(string text, float displayTime = 10.0f)
