@@ -86,6 +86,7 @@ public class HeroStateControl : MonoBehaviour
     {
         Hero.UpdateState += RequestAtributesUpdate;
         TavernController.UpdateState += ForceSetAtributes;
+        Enemy.UpdateState += RequestAtributesUpdate;
     }
     private IEnumerator OverloadController()
     {
@@ -250,6 +251,7 @@ public class HeroStateControl : MonoBehaviour
     {
         Hero.UpdateState -= RequestAtributesUpdate;
         TavernController.UpdateState -= ForceSetAtributes;
+        Enemy.UpdateState -= RequestAtributesUpdate;
     }
 
 }

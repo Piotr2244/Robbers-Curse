@@ -40,6 +40,7 @@ public class Hero : MonoBehaviour
     public GameObject fireballPrefab; //INDEX 1
     public GameObject windSpellPrefab; //INDEX 2
     public GameObject FireCloak; //INDEX 3
+    private bool FireCloakOn = false;
     public GameObject DeathSpell; //INDEX 4
     public GameObject FireRain; //INDEX 5
 
@@ -96,6 +97,8 @@ public class Hero : MonoBehaviour
                     MaxMana = heroStatus.MaxMana;
                     mana = heroStatus.mana;
                     toxic = heroStatus.toxic;
+                    if (toxic < 60)
+                        toxic += 10;
                     damage = heroStatus.damage;
                     attackRange = heroStatus.attackRange;
                     gold = heroStatus.gold;
@@ -226,7 +229,7 @@ public class Hero : MonoBehaviour
             animator.SetBool("Grounded", grounded);
             body2d.velocity = new Vector2(body2d.velocity.x, jumpForce);
             groundSensor.Disable(0.2f);
-            UpdateState.Invoke(1, 0.01f, 2);
+            UpdateState.Invoke(1, 0.05f, 2);
         }
 
         //Run
@@ -363,19 +366,21 @@ public class Hero : MonoBehaviour
             }
             if (spellIndex == 3)
             {
-                if (FireCloak != null)
-                {
-                    if (mana >= 10f)
+                if (!FireCloakOn)
+                    if (FireCloak != null)
                     {
-                        audioSrc.clip = FireCloakSound;
-                        audioSrc.Play();
-                        mana -= 10f;
-                        Vector3 playerPosition = transform.position;
-                        playerPosition.y += 0.5f;
-                        Instantiate(FireCloak, playerPosition, Quaternion.identity);
-                        SpellOverloadController(10);
+                        if (mana >= 10f)
+                        {
+                            StartCoroutine(FireCloakCooldown());
+                            audioSrc.clip = FireCloakSound;
+                            audioSrc.Play();
+                            mana -= 10f;
+                            Vector3 playerPosition = transform.position;
+                            playerPosition.y += 0.5f;
+                            Instantiate(FireCloak, playerPosition, Quaternion.identity);
+                            SpellOverloadController(10);
+                        }
                     }
-                }
             }
             if (spellIndex == 4)
             {
@@ -405,9 +410,9 @@ public class Hero : MonoBehaviour
             {
                 if (FireRain != null)
                 {
-                    if (mana >= 50f)
+                    if (mana >= 25f)
                     {
-                        mana -= 50f;
+                        mana -= 25f;
                         float randomX;
                         System.Random random = new System.Random();
                         for (int x = 0; x <= 30; x++)
@@ -487,6 +492,7 @@ public class Hero : MonoBehaviour
         damage -= 2;
         speed -= 2;
         UpdateState.Invoke(3, 1, 20);
+        UpdateState.Invoke(3, 1, 60);
         ToxicBoostActive = false;
         audioSrc.clip = FireCloakSound;
         audioSrc.Play();
@@ -580,6 +586,14 @@ public class Hero : MonoBehaviour
                 jumpForce = 0.5f;
             yield return new WaitForSeconds(1.0f);
         }
+
+    }
+
+    private IEnumerator FireCloakCooldown()
+    {
+        FireCloakOn = true;
+        yield return new WaitForSeconds(10f);
+        FireCloakOn = false;
 
     }
 }

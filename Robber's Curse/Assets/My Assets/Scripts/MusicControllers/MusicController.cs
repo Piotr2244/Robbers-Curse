@@ -60,7 +60,7 @@ public class MusicController : MonoBehaviour
     }
     public void RestorePrevTrack()
     {
-        if (!isChangingTrack)
+        if (!isChangingTrack && PrevTrackIndex != 2)
         {
             StartCoroutine(ChangeTrackRoutine(PrevTrackIndex));
         }
@@ -79,7 +79,8 @@ public class MusicController : MonoBehaviour
         }
         audioSrc.Stop();
         audioSrc.volume = startVol;
-        PrevTrackIndex = currentTrackIndex;
+        if (currentTrackIndex != 2)
+            PrevTrackIndex = currentTrackIndex;
         currentTrackIndex = newTrackIndex;
         PlayTrack(newTrackIndex);
 

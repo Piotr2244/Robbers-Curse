@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    public float damage = 10f;
+    public float damage = 7f;
     public float speed = 5f;
     private Transform playerTransform;
     Vector3 direction;

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class GoodEnding : MonoBehaviour
 {
@@ -37,10 +39,12 @@ public class GoodEnding : MonoBehaviour
             if (done)
                 break;
 
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
             if (playerObject != null)
             {
-                float distanceToPlayer = Vector2.Distance(transform.position, playerObject.transform.position);
-
+                Vector2 playerPosition = playerObject.transform.position;
+                float distanceToPlayer = Vector2.Distance(new Vector2(415.83f, 116.02f), playerPosition);
                 if (distanceToPlayer <= 5f)
                 {
                     StartCoroutine(BlackScreen());
@@ -62,7 +66,13 @@ public class GoodEnding : MonoBehaviour
                     done = true;
                 }
             }
+            else
+                Debug.Log("333");
             yield return new WaitForSeconds(0.2f);
         }
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

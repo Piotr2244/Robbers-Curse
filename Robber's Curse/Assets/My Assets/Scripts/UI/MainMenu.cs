@@ -87,7 +87,7 @@ public class MainMenu : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         yield return new WaitForSeconds(1f);
-        OnDisplayText.Invoke(plotStory, 15, 10);
+        OnDisplayText.Invoke(plotStory, 15, 20);
         yield return new WaitForSeconds(5f);
         StartCoroutine(ShowImage(sprites[0])); //hero
         yield return new WaitForSeconds(15f);
@@ -96,18 +96,14 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(HideImage(sprites[1]));
         yield return new WaitForSeconds(5f);
         StartCoroutine(HideImage(sprites[0]));
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(55f);
 
         SceneManager.LoadScene("Level 1");
     }
 
     public void ExitGameClick()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-                    Application.Quit();
-#endif
+        Application.Quit();
     }
 
     public void ShowCredits()

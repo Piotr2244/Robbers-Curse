@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Device;
 
 public class WizardBoss : Enemy
 {
@@ -64,7 +62,8 @@ public class WizardBoss : Enemy
             startedChasing = true;
             if (!closingGate)
                 StartCoroutine(CloseGate());
-            SensorRadius = 25;
+            SensorRadius = 50;
+            gameObject.tag = "Enemy";
         }
     }
 
@@ -124,11 +123,7 @@ public class WizardBoss : Enemy
     }
     public void ExitGameClick()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-                    Application.Quit();
-#endif
+        Application.Quit();
     }
 
 
@@ -194,5 +189,6 @@ public class WizardBoss : Enemy
         playerRigidbody.constraints = RigidbodyConstraints2D.None;
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         afterDialog = true;
+
     }
 }

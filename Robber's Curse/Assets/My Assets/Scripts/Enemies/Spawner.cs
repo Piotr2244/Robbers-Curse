@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     public GameObject barricade;
     public float maxLeft, maxRight;
     public bool hasStartedSpawn = false;
+    public bool rotateAtSpawn = false;
 
     private List<Enemy> spawnedEnemies = new List<Enemy>();
 
@@ -60,6 +61,8 @@ public class Spawner : MonoBehaviour
                 newEnemy.moveRight = true;
             else
                 newEnemy.moveRight = false;
+            if (rotateAtSpawn)
+                newEnemy.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             spawnedEnemies.Add(newEnemy);
 
             yield return new WaitForSeconds(spawnRate);

@@ -642,8 +642,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246009896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.57, y: -2.84, z: 0}
-  m_LocalScale: {x: 5.4097, y: 4.6682, z: 1}
+  m_LocalPosition: {x: -5.4356, y: -2.7667, z: 0}
+  m_LocalScale: {x: 2.4116, y: 1.7481, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -877,7 +877,7 @@ PrefabInstance:
         where wizards meet astral beings of unimaginable power. Perhaps you could
         plead with these beings to cure you of your affliction. Despair and agony
         weigh heavily on you, so you set out on a journey. After weeks of travel,
-        you reach the foothills of the mountain..."
+        you reach the foothills of the mountain...
       objectReference: {fileID: 0}
     - target: {fileID: 2450024234170691195, guid: 0abdede79c948ea469cca6a5697a35a9, type: 3}
       propertyPath: m_Pivot.x

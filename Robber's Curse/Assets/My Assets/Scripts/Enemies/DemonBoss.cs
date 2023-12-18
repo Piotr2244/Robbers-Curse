@@ -24,6 +24,7 @@ public class DemonBoss : Enemy
         health = 120.0f;
         attackSpeed = 1.0f;
         damage = 5.0f;
+        isBoss = true;
     }
     // Update is called once per frame
     void Update()

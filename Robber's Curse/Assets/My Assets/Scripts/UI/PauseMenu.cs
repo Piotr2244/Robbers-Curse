@@ -67,13 +67,8 @@ public class PauseMenu : MonoBehaviour
         inControls = false;
     }
 
-    public void returnToMenu()
+    public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-                    Application.Quit();
-#endif
-        //SceneManager.LoadScene("Main Menu");
+        Application.Quit();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WindSpell : MonoBehaviour
 {
-    public float damage = 3.0f;
+    public float damage = 2.0f;
     public float speed = 6f;
     private Transform playerTransform;
     Vector3 direction;

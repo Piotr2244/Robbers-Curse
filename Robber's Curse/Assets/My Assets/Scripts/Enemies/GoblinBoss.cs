@@ -24,6 +24,7 @@ public class GoblinBoss : Enemy
         health = 80.0f;
         attackSpeed = 1.0f;
         damage = 4.0f;
+        isBoss = true;
     }
     // Update is called once per frame
     void Update()

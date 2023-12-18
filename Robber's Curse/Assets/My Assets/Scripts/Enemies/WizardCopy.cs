@@ -29,14 +29,14 @@ public class WizardCopy : MonoBehaviour
                     text[0] = "Robber: No, not just you!";
                     text[1] = "Wizard: You look surprised. I must admit, your determination has impressed me a lot. You've reached the very top of the mountain despite numerous adversities.";
                     text[2] = "Robber: Why are you here? Where are the mystical beings and other wizards? ";
-                    text[3] = "Wizard: he wizards were too busy summoning astral beings. I killed them all when they were distracted.";
+                    text[3] = "Wizard: The wizards were too busy summoning astral beings. I killed them all when they were distracted.";
                     text[4] = "Now, all the astral power will belong to me.";
                     text[5] = "I cast a curse on you because I needed an experimental subject. Now I see the curse works, turning people into powerful warriors.";
                     text[6] = "At the same time, it kills them, making them depart before they start to rebel. Everything went according to my plan.";
-                    OnDisplayText.Invoke(text, 1, 5);
+                    OnDisplayText.Invoke(text, 10, 5);
                     Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
                     playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-                    yield return new WaitForSeconds(10);
+                    yield return new WaitForSeconds(75);
                     StartCoroutine(FlyAway());
                     playerRigidbody.constraints = RigidbodyConstraints2D.None;
                     playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;

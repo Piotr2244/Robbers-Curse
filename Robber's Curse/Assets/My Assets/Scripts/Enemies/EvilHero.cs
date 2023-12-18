@@ -34,10 +34,11 @@ public class EvilHero : Enemy
     {
         speed = 2.0f;
         attackRange = 1.0f;
-        health = 100.0f;
+        health = 120.0f;
         attackSpeed = 1.0f;
-        damage = 4.0f;
+        damage = 5.0f;
         canJump = true;
+        isBoss = true;
     }
     private void Start()
     {
@@ -71,6 +72,7 @@ public class EvilHero : Enemy
             if (!closingGate)
                 StartCoroutine(CloseGate());
             SensorRadius = 25;
+            gameObject.tag = "Enemy";
         }
 
         if (health <= 20 && !empowered)

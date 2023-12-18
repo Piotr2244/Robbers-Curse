@@ -30,6 +30,10 @@ public class Enemy : MonoBehaviour
     public GameObject coin;
     protected bool Canjump = false;
 
+    protected bool isBoss = false;
+    public delegate void SendStateUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0);
+    public static event SendStateUpdate UpdateState;
+
     public float SensorRadius = 0; //for smart enemies
     protected bool isChasing = false;
     //sounds:
@@ -216,6 +220,8 @@ public class Enemy : MonoBehaviour
             }
             catch { }
             enemy.GetComponent<Hero>().TakeDamage(damage);
+            if (isBoss)
+                UpdateState.Invoke(1, 1f, 1f);
         }
 
         isAttacking = false;
