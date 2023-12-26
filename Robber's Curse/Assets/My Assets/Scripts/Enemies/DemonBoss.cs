@@ -2,21 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+ * Second Boss, follows the player and attacks on short range
+ */
 public class DemonBoss : Enemy
 {
+    // References
     public RockSpawner spawner;
-    public bool isFighting = false;
     public GameObject barricade;
     public GameObject Closingbarricade;
+    // Variables
     private bool isRemoving = false;
     private bool closingGate = false;
-
+    public bool isFighting = false;
+    private bool startedChasing = false;
+    // Events and delegates
     public delegate void ChangeTrack(int index = 2);
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
     public static event RestoreTrack RestoreMusic;
 
-    private bool startedChasing = false;
+    // Constructor
     public DemonBoss()
     {
         speed = 1.0f;
@@ -50,6 +56,7 @@ public class DemonBoss : Enemy
         }
     }
 
+    // Removing barricade to leave the battlefield
     private IEnumerator RemoveBarricade()
     {
         isRemoving = true;
@@ -64,7 +71,7 @@ public class DemonBoss : Enemy
         }
 
     }
-
+    // Closing the gate that prevents from escaping the battle 
     private IEnumerator CloseGate()
     {
         ChangeMusic(5);

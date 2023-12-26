@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/*Wizard copy, displays some dialogs, 
+ * doesn't fight */
 public class WizardCopy : MonoBehaviour
 {
+    // References
     private GameObject playerObject;
+    public Spawner spawner;
+    //Events and delegates
     public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
     public static event DisplayTextDelegate OnDisplayText;
 
-    public Spawner spawner;
+    // Start is called on scene load
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(CheckForPlayerCoroutine());
     }
+    // If player is nearby, display dialog
     IEnumerator CheckForPlayerCoroutine()
     {
         while (true)
@@ -46,7 +51,7 @@ public class WizardCopy : MonoBehaviour
             }
             yield return new WaitForSeconds(0.2f);
         }
-
+        // Fly away and perish
         IEnumerator FlyAway()
         {
             Vector2 direction = new Vector2(1, 1);

@@ -3,44 +3,44 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ * This class contains main functionalities for game enemies
+ */
 public class Enemy : MonoBehaviour
 {
-
+    // Main variables
     protected float speed = 0;
     public float health = 0;
     protected float damage = 0;
     public bool isAlive = true;
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected float attackSpeed; // the lower speed, the faster attacks, works like a delay between attacks
-
+    public float attackRange;
+    public float attackSpeed; // The lower speed, the faster attacks, works like a delay between attacks
+    // Variables
     protected bool isAttacking = false;
     private bool canAttack = true;
     public float maxLeft;
     public float maxRight;
     public bool moveRight;
     public bool fromSpawner = false;
-
+    public int coinAmount = 0;
+    public bool moneyDroped = false;
+    protected bool canJump = false;
+    protected bool isBoss = false;
+    protected bool isChasing = false;
+    public float SensorRadius = 0; //For smart enemies  
+    // Components and references
     public LayerMask playerLayer;
     protected Animator animator;
     protected Rigidbody2D body2d;
     public Transform attackPoint;
-
-    public int coinAmount = 0;
-    public bool moneyDroped = false;
     public GameObject coin;
-    protected bool Canjump = false;
-
-    protected bool isBoss = false;
+    public AudioSource src;
+    public ParticleSystem blood;
+    // Events and delegates
     public delegate void SendStateUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0);
     public static event SendStateUpdate UpdateState;
 
-    public float SensorRadius = 0; //for smart enemies
-    protected bool isChasing = false;
-    //sounds:
-    public AudioSource src;
-    //particles:
-    public ParticleSystem blood;
-
+    // Start is called on scene load
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -50,12 +50,7 @@ public class Enemy : MonoBehaviour
         src = transform.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    //moves from left to right and does melee attacks
+    // Moves from left to right and does melee attacks
     protected void CasualEnemy()
     {
         if (isAlive)
@@ -77,6 +72,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Follows the player if he is nearby
     protected void SmartEnemy()
     {
         if (isAlive)
@@ -98,7 +94,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    // Simple movement method
     protected void movingLeftRight()
     {
         if (!isAttacking)
@@ -131,6 +127,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Gets current player localisation on X axis to follow him
     protected void FollowPlayer()
     {
         if (!isAttacking)
@@ -139,7 +136,6 @@ public class Enemy : MonoBehaviour
             GetComponent<Rigidbody2D>().isKinematic = false;
             animator.SetBool("Attack", false);
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, SensorRadius);
-
             foreach (Collider2D collider in colliders)
             {
                 if (collider.CompareTag("Player"))
@@ -161,18 +157,21 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    // Checks if the player is in range
     protected bool PlayerInRange()
     {
         Vector2 pos = transform.position;
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(pos, attackRange, playerLayer);
         return hitPlayers.Length > 0;
     }
+
+    // Target the player (if he is in range) and try to attack him
     protected void Attack()
     {
         GetComponent<Rigidbody2D>().isKinematic = true;
         isAttacking = true;
         animator.SetBool("Attack", true);
-        if (animator != null && Canjump)
+        if (animator != null && canJump)
         {
             animator.SetBool("Jump", false);
         }
@@ -192,18 +191,20 @@ public class Enemy : MonoBehaviour
             StartCoroutine(MeleeAttackCoroutine(attackSpeed));
 
     }
+    // Take damage from the player
     public void TakeDamage(float damage)
     {
         blood.Play();
-        //Instantiate(blood, transform.position, Quaternion.identity);
         health -= damage;
     }
+    // Check if the enemy is still alive
     protected void StillAlive()
     {
         if (health <= 0)
             isAlive = false;
     }
 
+    // Hurt the player if he is in range for the determined amount of time
     private IEnumerator MeleeAttackCoroutine(float delay)
     {
         canAttack = false;
@@ -226,9 +227,8 @@ public class Enemy : MonoBehaviour
 
         isAttacking = false;
         canAttack = true;
-
     }
-
+    // Draw attack range
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -236,6 +236,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+    // Change animators after death
     private void Death()
     {
         GetComponent<Rigidbody2D>().isKinematic = false;
@@ -248,7 +249,7 @@ public class Enemy : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
         }
     }
-
+    // Drop coins after death
     private void dropMoney()
     {
         if (!moneyDroped)
@@ -262,6 +263,7 @@ public class Enemy : MonoBehaviour
             }
     }
 
+    // Destroy the enemy after his defeat
     private IEnumerator perish()
     {
         if (!fromSpawner)

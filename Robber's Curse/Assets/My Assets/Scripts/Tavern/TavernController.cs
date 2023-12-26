@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static TavernController;
-
+/* Tavern controller, script is connected with
+ * tavern canvas on scene */
 public class TavernController : MonoBehaviour
 {
+    // Variables and references
     public Hero hero;
     public EquipmentScript equipment;
     // HEALING
@@ -25,13 +26,14 @@ public class TavernController : MonoBehaviour
     private bool strTrained = false, speedTrained = false, jumpTrained = false;
     public TextMeshProUGUI TrainStrText, TrainSpeedText, TrainJumpText;
 
-    //DELEGATES
+    // Delegates and events
     public delegate void SendStateUpdate(int newFatigue, int newInjuries, int newSickness, int mode);
     public static event SendStateUpdate UpdateState;
     public delegate void ChangeTrack(int index = 2);
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
     public static event RestoreTrack RestoreMusic;
+    // Start is called before the first frame update
     void Start()
     {
         TrainStrText = transform.Find("TrainStr/Text (TMP)").GetComponent<TextMeshProUGUI>();
@@ -61,6 +63,7 @@ public class TavernController : MonoBehaviour
     {
         RestoreMusic();
     }
+    // Randomly set prices
     private void setPrices()
     {
         System.Random random = new System.Random();
@@ -71,7 +74,7 @@ public class TavernController : MonoBehaviour
         RandomiseItems();
 
     }
-
+    // Below all available actions in tavern
     public void HealHero()
     {
         if (hero.gold >= healPriceAmount && hero.health < hero.Maxhealth)
@@ -88,7 +91,6 @@ public class TavernController : MonoBehaviour
             hero.MaxMana += 1;
         }
     }
-
     private void RandomiseItems()
     {
         int randomInt;
@@ -125,7 +127,6 @@ public class TavernController : MonoBehaviour
         Item2DisplayPRice.text = "Buy for: " + Item2Price.ToString();
         Item3DisplayPRice.text = "Buy for: " + Item3Price.ToString();
     }
-
     public void BuyItem1()
     {
         if (hero.gold >= Item1Price && item1.ItemIndex != 0)
@@ -193,7 +194,6 @@ public class TavernController : MonoBehaviour
             TrainJumpText.text = "Done";
         }
     }
-
     public void Sleep()
     {
         if (!sleepUsed && hero.gold >= 40.0f)

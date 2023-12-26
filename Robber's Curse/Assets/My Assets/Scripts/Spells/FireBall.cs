@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* Single fire spell to hurt enemies */
 public class FireBall : MonoBehaviour
 {
+    // Variables and references
     public float damage = 7f;
     public float speed = 5f;
     private Transform playerTransform;
     Vector3 direction;
     private Animator animator;
-
+    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("hit", false);
         StartCoroutine(perish());
     }
-
+    // Update is called once per frame
     void Update()
     {
         if (playerTransform == null)
@@ -41,7 +42,7 @@ public class FireBall : MonoBehaviour
 
         transform.Translate(direction * speed * Time.deltaTime);
     }
-
+    // Hurt enemy if he is in collision
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -53,12 +54,13 @@ public class FireBall : MonoBehaviour
 
         }
     }
-
+    // Destroy spell after time if enemy was hit
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
+    // Destroy spell after time if it is still active
     private IEnumerator perish()
     {
         yield return new WaitForSeconds(15f);

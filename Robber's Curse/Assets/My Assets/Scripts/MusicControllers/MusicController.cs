@@ -1,18 +1,25 @@
 using System.Collections;
 using UnityEngine;
-
+/* Music controller class */
 public class MusicController : MonoBehaviour
 {
+    // Variables and references
     private AudioSource audioSrc;
     public AudioClip[] tracks;
     // 0 - Main Menu
     // 1 - Level 1
     // 2 - tavern
     // 3 - Boss 1
+    // 4 - Level 2
+    // 5 - Boss 2
+    // 6 - Level 3
+    // 7 - Boss 3
+    // 8 - Level 4
+    // 9 - Boss 4
     public int currentTrackIndex = 0;
     public int PrevTrackIndex = 0;
     private bool isChangingTrack = false;
-
+    // Start is called before the first frame update
     void Start()
     {
         audioSrc = GetComponent<AudioSource>();
@@ -45,12 +52,13 @@ public class MusicController : MonoBehaviour
         WizardBoss.ChangeMusic -= ChangeTrack;
         WizardBoss.RestoreMusic -= RestorePrevTrack;
     }
-
+    // Play a chosen track
     void PlayTrack(int index)
     {
         audioSrc.clip = tracks[index];
         audioSrc.Play();
     }
+    // Change current track
     public void ChangeTrack(int newTrackIndex)
     {
         if (!isChangingTrack)
@@ -58,6 +66,7 @@ public class MusicController : MonoBehaviour
             StartCoroutine(ChangeTrackRoutine(newTrackIndex));
         }
     }
+    // Play previous track
     public void RestorePrevTrack()
     {
         if (!isChangingTrack && PrevTrackIndex != 2)
@@ -65,6 +74,7 @@ public class MusicController : MonoBehaviour
             StartCoroutine(ChangeTrackRoutine(PrevTrackIndex));
         }
     }
+    // Changing track slowly
     IEnumerator ChangeTrackRoutine(int newTrackIndex)
     {
         isChangingTrack = true;
@@ -93,6 +103,4 @@ public class MusicController : MonoBehaviour
         audioSrc.volume = startVol;
         isChangingTrack = false;
     }
-
-
 }

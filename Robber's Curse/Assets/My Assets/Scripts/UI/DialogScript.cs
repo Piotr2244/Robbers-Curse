@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/* Class connected with canvas, displays
+ * messages and dialogs on screen */
 public class DialogScript : MonoBehaviour
 {
+    // Text on scene reference
     public TextMeshProUGUI textMeshPro;
-
-    void Start() { }
 
     private void Awake()
     {
@@ -29,12 +29,12 @@ public class DialogScript : MonoBehaviour
         WizardCopy.OnDisplayText -= DisplayDialog;
         GoodEnding.OnDisplayText -= DisplayDialog;
     }
-
+    // Display a single text
     public void DisplayText(string text, float displayTime = 10.0f)
     {
         StartCoroutine(DisplayTextCoroutine(text, displayTime));
     }
-
+    // Show text for some time
     private IEnumerator DisplayTextCoroutine(string text, float displayTime)
     {
         Debug.Log(text);
@@ -42,12 +42,12 @@ public class DialogScript : MonoBehaviour
         yield return new WaitForSeconds(displayTime);
         textMeshPro.text = "";
     }
-
+    // Display a longer dialog
     public void DisplayDialog(string[] dialog, float displayTime, float afterPause = 0)
     {
         StartCoroutine(DisplayDialogCoroutine(dialog, displayTime, afterPause));
     }
-
+    // Display dialog fragments part after part
     private IEnumerator DisplayDialogCoroutine(string[] dialog, float displayTime, float afterPause = 0)
     {
         foreach (string line in dialog)

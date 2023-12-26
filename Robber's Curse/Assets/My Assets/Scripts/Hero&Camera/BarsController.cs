@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * UI bars showing current hp, mana or toxic level */
 public class BarsController : MonoBehaviour
 {
-
+    // Variables
     public GameObject image;
     public Hero hero;
     private Vector3 tempPos;
+    // References
     public int index; // where to show the bar
     public int TypeIndex; // 1=health, 2=mana, 3=toxic
 
+    // Update is called once per frame
     void Update()
     {
         Vector3 newScale = image.transform.localScale;
@@ -24,6 +28,7 @@ public class BarsController : MonoBehaviour
 
         image.transform.localScale = newScale;
     }
+    // Late update is called later than update
     void LateUpdate()
     {
         tempPos = transform.position;

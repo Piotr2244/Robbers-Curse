@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/* Inventory base, stores all available
+ * items in game */
 
 public class InventoryBase : MonoBehaviour
 {
+    // Variables and references
     public List<Sprite> sprites = new List<Sprite>();
     public List<string> texts = new List<string>();
-
     public Hero hero;
 
-    //items to use
+    // Items to use
     public delegate void UseItem();
     public UseItem[] ItemFunctions;
+    // Start is called before the first frame update
     public void Start()
     {
         texts.Add(""); //INDEX 0
@@ -37,8 +40,8 @@ public class InventoryBase : MonoBehaviour
             };
     }
 
+    // Use items after their activation
     public void Item0Used() { } //no item
-
     public void Item1Used()
     {
         if (hero.health + 5 <= hero.Maxhealth)

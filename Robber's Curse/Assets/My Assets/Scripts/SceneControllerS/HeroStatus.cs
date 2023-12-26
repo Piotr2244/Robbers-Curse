@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+/* Hero status holder, helps to brong
+ * Stats between scenes */
 public class HeroStatus : MonoBehaviour
 {
-    public bool isActive = true;
-
-    //public Hero heroSave;
-    //public EquipmentScript equipmentSave;
-    //public HeroStateControl stateSave;
+    // References
     public Hero heroLoad;
     public EquipmentScript equipmentLoad;
     public HeroStateControl stateLoad;
-
+    // Variables
+    public bool isActive = true;
     //hero
     public float speed = 0f;
     public float jumpForce = 0f;
@@ -31,7 +29,6 @@ public class HeroStatus : MonoBehaviour
     public int item2;
     public int item3;
     public int item4;
-
     //state
     public int currentFatigue = 1;
     public int currentInjuries = 1;
@@ -41,10 +38,9 @@ public class HeroStatus : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
-
+    // Save status before entering to a new scene
     public void SaveStatus()
     {
-        // Zapis wartoœci do obiektów Save
         speed = heroLoad.speed;
         jumpForce = heroLoad.jumpForce;
         Maxhealth = heroLoad.Maxhealth;

@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Spawner class, spawns chosen enemies,
+ * can block an entrance on the scene untill
+ * all spawned enemies are dead*/
 public class Spawner : MonoBehaviour
 {
+    // References
     public Enemy spawn;
+    public GameObject barricade;
+    // Variables
     public int spawnAmount = 0;
     public float spawnRate = 0;
     public float SensorRadius = 0;
-    public GameObject barricade;
     public float maxLeft, maxRight;
     public bool hasStartedSpawn = false;
     public bool rotateAtSpawn = false;
-
     private List<Enemy> spawnedEnemies = new List<Enemy>();
 
+    // Update is called once per frame
     private void Update()
     {
         StartCoroutine(CheckIfToStartSpawn());
     }
-
-
+    // If player is nearby, start spawning enemies
     private IEnumerator CheckIfToStartSpawn()
     {
         while (true)
@@ -45,7 +49,7 @@ public class Spawner : MonoBehaviour
         }
 
     }
-
+    // Spawn enemies
     private IEnumerator SpawnCoroutine()
     {
         for (int x = 1; x <= spawnAmount; x++)
@@ -69,10 +73,9 @@ public class Spawner : MonoBehaviour
         }
         StartCoroutine(CheckAllEnemiesDead());
     }
-
+    // Check if all spawned enemies are dead
     private IEnumerator CheckAllEnemiesDead()
     {
-
         while (true)
         {
             yield return new WaitForSeconds(1.0f);
@@ -86,7 +89,6 @@ public class Spawner : MonoBehaviour
                     break;
                 }
             }
-
             if (allDead)
             {
                 yield return new WaitForSeconds(2.0f);
@@ -95,7 +97,7 @@ public class Spawner : MonoBehaviour
             }
         }
     }
-
+    // If the gate is active, remove it
     private void OpenGate()
     {
         for (int x = spawnedEnemies.Count - 1; x >= 0; x--)
@@ -113,7 +115,7 @@ public class Spawner : MonoBehaviour
         }
         catch { };
     }
-
+    // Removing barricade
     private IEnumerator RemoveBarricade()
     {
         for (int x = 0; x < 2000; x++)

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* Vulture, simple enemy*/
 public class VultureScript : Enemy
 {
-    // Start is called before the first frame update
+    // Constructor
     public VultureScript()
     {
         speed = 3.0f;
@@ -13,13 +13,11 @@ public class VultureScript : Enemy
         attackSpeed = 0.7f;
         damage = 0.5f;
     }
-
     // Update is called once per frame
     void Update()
     {
         animator.SetBool("Move", true);
         CasualEnemy();
-
         if (!isAlive)
             animator.SetBool("Dead", true);
     }

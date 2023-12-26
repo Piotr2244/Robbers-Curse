@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* First boss, follows the player and performs 
+ * melee attacks*/
 public class GoblinBoss : Enemy
 {
+    // References
     public RockSpawner spawner;
-    public bool isFighting = false;
     public GameObject barricade;
     public GameObject Closingbarricade;
+    public bool isFighting = false;
+    // Variables
     private bool isRemoving = false;
     private bool closingGate = false;
-
+    private bool startedChasing = false;
+    // Events and delegates
     public delegate void ChangeTrack(int index = 2);
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
     public static event RestoreTrack RestoreMusic;
 
-    private bool startedChasing = false;
+    // Constructor
     public GoblinBoss()
     {
         speed = 1.0f;
@@ -31,7 +36,6 @@ public class GoblinBoss : Enemy
     {
         animator.SetBool("Move", true);
         SmartEnemy();
-
         if (!isAlive)
         {
             if (!isRemoving)
@@ -39,7 +43,6 @@ public class GoblinBoss : Enemy
             animator.SetBool("Dead", true);
             spawner.spawn = false;
         }
-
         if (isChasing && !startedChasing)
         {
             startedChasing = true;
@@ -49,7 +52,7 @@ public class GoblinBoss : Enemy
                 StartCoroutine(CloseGate());
         }
     }
-
+    // Removing barricade to leave the battlefield
     private IEnumerator RemoveBarricade()
     {
         isRemoving = true;
@@ -64,7 +67,7 @@ public class GoblinBoss : Enemy
         }
 
     }
-
+    // Closing the gate that prevents from escaping the battle 
     private IEnumerator CloseGate()
     {
         ChangeMusic(3);

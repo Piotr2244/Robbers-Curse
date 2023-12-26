@@ -1,30 +1,34 @@
 using System.Collections;
 using UnityEngine;
-
+/* Main enemy, first talks with player with dialog
+ * display, then, depending on hero choice, attacks
+ * the player or ends game */
 public class WizardBoss : Enemy
 {
-    public bool isFighting = false;
+    // Components and references
     public GameObject barricade;
     public GameObject Closingbarricade;
-    private bool isRemoving = false;
-    private bool closingGate = false;
-    public string[] plotStory;
-    public delegate void ChangeTrack(int index = 7);
-    public static event ChangeTrack ChangeMusic;
-    public delegate void RestoreTrack();
-    public static event RestoreTrack RestoreMusic;
-
-    private bool startedChasing = false;
-    private bool afterDialog = false;
-
-    public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
-    public static event DisplayTextDelegate OnDisplayText;
-
     public GameObject Fire;
     public GameObject DecisionCanvas;
     public SpriteRenderer EndgameBackGround;
     public GameObject button;
     private GameObject playerObject;
+    // Variables
+    public bool isFighting = false;
+    private bool isRemoving = false;
+    private bool closingGate = false;
+    public string[] plotStory;
+    private bool startedChasing = false;
+    private bool afterDialog = false;
+    // Events and Delegates
+    public delegate void ChangeTrack(int index = 7);
+    public static event ChangeTrack ChangeMusic;
+    public delegate void RestoreTrack();
+    public static event RestoreTrack RestoreMusic;
+    public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
+    public static event DisplayTextDelegate OnDisplayText;
+
+    // Constructor
     public WizardBoss()
     {
         speed = 2.0f;
@@ -33,7 +37,7 @@ public class WizardBoss : Enemy
         attackSpeed = 0.2f;
         damage = 0.5f;
     }
-
+    // Start is called on scene load
     private void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -44,19 +48,17 @@ public class WizardBoss : Enemy
         button = transform.Find("EndGame/Quit").gameObject;
         button.SetActive(false);
     }
+    // Update is called once per frame
     void Update()
     {
         if (afterDialog)
             SmartEnemy();
-
-
         if (!isAlive)
         {
             if (!isRemoving)
                 StartCoroutine(RemoveBarricade());
             //animator.SetBool("Dead", true);
         }
-
         if (isChasing && !startedChasing)
         {
             startedChasing = true;
@@ -66,7 +68,7 @@ public class WizardBoss : Enemy
             gameObject.tag = "Enemy";
         }
     }
-
+    // Removing barricade to leave the battlefield
     private IEnumerator RemoveBarricade()
     {
         isRemoving = true;
@@ -82,7 +84,7 @@ public class WizardBoss : Enemy
         }
 
     }
-
+    // Closing the gate that prevents from escaping the battle 
     private IEnumerator CloseGate()
     {
         ChangeMusic(9);
@@ -96,7 +98,7 @@ public class WizardBoss : Enemy
             }
         }
     }
-
+    // Check if player is in range, if so, start dialog display methods
     IEnumerator CheckForPlayerCoroutine()
     {
         while (true)
@@ -121,12 +123,12 @@ public class WizardBoss : Enemy
             yield return new WaitForSeconds(0.2f);
         }
     }
+    // Exit game
     public void ExitGameClick()
     {
         Application.Quit();
     }
-
-
+    // Make screen black slowly
     private IEnumerator BlackScreen()
     {
         float alpha = 0f;
@@ -139,7 +141,7 @@ public class WizardBoss : Enemy
             yield return new WaitForSeconds(0.05f);
         }
     }
-
+    // Endgame display if player decides to run from final boss
     private IEnumerator RunEndingDisplay()
     {
         StartCoroutine(BlackScreen());
@@ -155,7 +157,7 @@ public class WizardBoss : Enemy
         yield return new WaitForSeconds(65f);
         button.SetActive(true);
     }
-
+    // Endgame display if player decides to joun the final boss
     private IEnumerator JoinEndingDisplay()
     {
         StartCoroutine(BlackScreen());
@@ -171,17 +173,19 @@ public class WizardBoss : Enemy
         yield return new WaitForSeconds(5f);
         button.SetActive(true);
     }
-
+    // Choose to run from enemy
     public void RunButton()
     {
         DecisionCanvas.SetActive(false);
         StartCoroutine(RunEndingDisplay());
     }
+    // Choose to join the enemy
     public void JoinButton()
     {
         DecisionCanvas.SetActive(false);
         StartCoroutine(JoinEndingDisplay());
     }
+    // Choose to figh the enemy
     public void FightButton()
     {
         DecisionCanvas.SetActive(false);

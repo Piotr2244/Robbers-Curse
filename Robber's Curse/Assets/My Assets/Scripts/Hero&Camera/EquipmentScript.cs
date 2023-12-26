@@ -2,10 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Script controlling Equipment object,
+ * Stores items and controlls most item
+ * actions */
 public class EquipmentScript : MonoBehaviour
 {
+    // Variables and References
     public Hero hero;
-
     //STATISTICS
     private Text goldText;
     private Text strengthText;
@@ -17,16 +20,16 @@ public class EquipmentScript : MonoBehaviour
     private SpriteRenderer spell3;
     private SpriteRenderer spell4;
     private SpriteRenderer spell5;
-
     //ITEMS
     public Item item1;
     public Item item2;
     public Item item3;
     public Item item4;
-
     //LOADING STATS FROM ANOTHER SCENE
     public bool LoadFromPrev = false;
     public HeroStatus heroStatus;
+
+    // Load items from previous scene
     private void LoadStats()
     {
         if (LoadFromPrev)
@@ -42,10 +45,9 @@ public class EquipmentScript : MonoBehaviour
             }
         }
     }
-
+    // Object awake functions
     private void Awake()
     {
-
         goldText = transform.Find("GoldBar/gold").GetComponent<Text>();
         strengthText = transform.Find("StrengthBar/strength").GetComponent<Text>();
         speedText = transform.Find("SpeedBar/speed").GetComponent<Text>();
@@ -65,9 +67,8 @@ public class EquipmentScript : MonoBehaviour
         LoadStats();
 
         ItemToCollect.OnItemCollision += GetItem;
-
     }
-
+    // Update is called once per frame
     private void Update()
     {
         if (hero != null)
@@ -80,7 +81,7 @@ public class EquipmentScript : MonoBehaviour
             useItem();
         }
     }
-
+    // Change current spell display
     private void changeSpell()
     {
         spell1.enabled = false;
@@ -109,7 +110,7 @@ public class EquipmentScript : MonoBehaviour
                 break;
         }
     }
-
+    // Chose an item and use it
     private void useItem()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -129,7 +130,7 @@ public class EquipmentScript : MonoBehaviour
             item4.UseCurrentItem();
         }
     }
-
+    // Add item to inventory
     private void GetItem(int indexx, GameObject instance)
     {
         if (item1.ItemIndex == 0)
@@ -145,7 +146,7 @@ public class EquipmentScript : MonoBehaviour
         Destroy(instance);
 
     }
-
+    // buy item and add it to inventory
     public bool BuyItem(int indexx)
     {
         if (item1.ItemIndex == 0)

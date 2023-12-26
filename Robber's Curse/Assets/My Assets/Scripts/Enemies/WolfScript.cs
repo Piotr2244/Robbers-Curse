@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+/* Wolf, simple enemy */
 public class WolfScript : Enemy
 {
+    //Constructor
     public WolfScript()
     {
         speed = 3.0f;
@@ -16,10 +17,8 @@ public class WolfScript : Enemy
     // Update is called once per frame
     void Update()
     {
-
         animator.SetBool("Move", true);
         CasualEnemy();
-
         if (!isAlive)
             animator.SetBool("Dead", true);
     }

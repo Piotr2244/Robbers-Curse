@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/* Main menu controller, alows to chose menu
+ * options by clicking a proper button */
 public class MainMenu : MonoBehaviour
 {
+    // Variables and references
     private GameObject button1;
     private GameObject button2;
     private GameObject button3;
@@ -15,10 +17,12 @@ public class MainMenu : MonoBehaviour
     private float pos1, pos2, pos3, pos4;
     private SpriteRenderer blackScreen;
     public string[] plotStory;
+    public SpriteRenderer[] sprites;
+    // Events and delegates
     public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
     public static event DisplayTextDelegate OnDisplayText;
 
-    public SpriteRenderer[] sprites;
+    // Start is called before the first frame update
     void Start()
     {
         button1 = transform.Find("MainButtons/Start").gameObject;
@@ -39,6 +43,7 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(MakeMenu());
 
     }
+    // Make buttons move on camera position
     private IEnumerator MoveToPositionX(GameObject gm)
     {
         Vector3 targetPosition = new Vector3(0, gm.transform.position.y, gm.transform.position.z);
@@ -49,6 +54,7 @@ public class MainMenu : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
+    // Make menu visible and show buttons
     IEnumerator MakeMenu()
     {
         Color newColor = blackScreen.color;
@@ -64,15 +70,17 @@ public class MainMenu : MonoBehaviour
         }
         ReturnToMenu();
     }
-
+    // Put buttons on their previous position
     private void ReturnToPosition(GameObject gm, float position)
     {
         gm.transform.position = new Vector3(position, gm.transform.position.y, gm.transform.position.z);
     }
+    // Start game
     public void StartGameClick()
     {
         StartCoroutine(StartGame());
     }
+    // Make game start performance, display plot and images, then start game
     public IEnumerator StartGame()
     {
         Color newColor = blackScreen.color;
@@ -100,12 +108,12 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene("Level 1");
     }
-
+    //Exit game
     public void ExitGameClick()
     {
         Application.Quit();
     }
-
+    // Show credist tab
     public void ShowCredits()
     {
         credits.SetActive(true);
@@ -115,7 +123,7 @@ public class MainMenu : MonoBehaviour
         ReturnToPosition(button4, pos4);
         title.SetActive(false);
     }
-
+    // Show menu once again
     public void ReturnToMenu()
     {
         credits.SetActive(false);
@@ -126,7 +134,7 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(MoveToPositionX(button3));
         StartCoroutine(MoveToPositionX(button4));
     }
-
+    // Show game info tab
     public void showInfo()
     {
         gameInfo.SetActive(true);
@@ -136,7 +144,7 @@ public class MainMenu : MonoBehaviour
         ReturnToPosition(button4, pos4);
         title.SetActive(false);
     }
-
+    // slowly show images 
     private IEnumerator ShowImage(SpriteRenderer image)
     {
         float duration = 1.0f;
@@ -154,7 +162,7 @@ public class MainMenu : MonoBehaviour
 
         image.color = targetColor;
     }
-
+    // slowly hide images
     private IEnumerator HideImage(SpriteRenderer image)
     {
         float duration = 3.0f;
@@ -162,14 +170,12 @@ public class MainMenu : MonoBehaviour
 
         Color startColor = image.color;
         Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
-
         while (timer < duration)
         {
             timer += Time.deltaTime;
             image.color = Color.Lerp(startColor, targetColor, timer / duration);
             yield return null;
         }
-
         image.color = targetColor;
     }
 }

@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* Rock spawner, spawns falling rocks */
 public class RockSpawner : MonoBehaviour
 {
+    // References
     public FallingRock rock;
+    // Variables
     public int maxLeft = 0;
     public int maxRight = 0;
-    public float spawnSpeed = 5; //seond delay actually
+    public float spawnSpeed = 5; //second delay between spawn
     public float sensorRadius = 1.0f;
     public bool spawn = true;
     private bool isSpawning = false;
@@ -17,7 +19,7 @@ public class RockSpawner : MonoBehaviour
         if (spawn)
             StartCoroutine(Spawner());
     }
-
+    // Start spawning
     public void ForceStartSpawn()
     {
         spawn = true;
@@ -26,10 +28,8 @@ public class RockSpawner : MonoBehaviour
             StartCoroutine(Spawner());
             isSpawning = true;
         }
-
     }
-
-
+    // Spawn rocks around
     public IEnumerator Spawner()
     {
         float randomX;
@@ -53,5 +53,4 @@ public class RockSpawner : MonoBehaviour
         }
 
     }
-
 }

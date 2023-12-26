@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* Spawns falling fire balls */
 public class FireRain : MonoBehaviour
 {
+    // Variables and references
     public float damage = 10f;
     private Animator animator;
     private AudioSource src;
+    // Start is called before the first frame update
     void Start()
     {
         transform.Rotate(new Vector3(0, 0, -90));
@@ -15,11 +17,7 @@ public class FireRain : MonoBehaviour
         src = transform.GetComponent<AudioSource>();
 
     }
-
-    void Update()
-    {
-
-    }
+    // Hurt enemy if he is in collision
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -34,6 +32,7 @@ public class FireRain : MonoBehaviour
             StartCoroutine(DestroyAfterDelay());
         }
     }
+    // Destroy spell after time if enemy or ground was hit
     private IEnumerator DestroyAfterDelay()
     {
         src.Play();

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/* This class was made by original hero
+ * prefab author, controlls hero ground sensor */
 public class Sensor_Hero : MonoBehaviour
 {
 

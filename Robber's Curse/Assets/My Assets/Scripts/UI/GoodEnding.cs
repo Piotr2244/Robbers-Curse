@@ -2,17 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-
+/* Script connected to good ending canvas, displays
+ * informations about game endin plot */
 public class GoodEnding : MonoBehaviour
 {
+    // Variables and references
     public SpriteRenderer EndgameBackGround;
     private GameObject playerObject;
-    public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
-    public static event DisplayTextDelegate OnDisplayText;
     public GameObject button;
     bool done = false;
-
+    // Events and delegates
+    public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
+    public static event DisplayTextDelegate OnDisplayText;
+    // Start is called before the first frame update
     void Start()
     {
         button = transform.Find("EndGame/Quit").gameObject;
@@ -20,6 +22,7 @@ public class GoodEnding : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(CheckForPlayerCoroutine());
     }
+    // Make screen black slowly
     private IEnumerator BlackScreen()
     {
         float alpha = 0f;
@@ -32,6 +35,7 @@ public class GoodEnding : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
+    // Check if player is near end game trigger, if so, display informations and end game later
     IEnumerator CheckForPlayerCoroutine()
     {
         while (true)
@@ -66,11 +70,10 @@ public class GoodEnding : MonoBehaviour
                     done = true;
                 }
             }
-            else
-                Debug.Log("333");
             yield return new WaitForSeconds(0.2f);
         }
     }
+    // Exit game
     public void QuitGame()
     {
         Application.Quit();

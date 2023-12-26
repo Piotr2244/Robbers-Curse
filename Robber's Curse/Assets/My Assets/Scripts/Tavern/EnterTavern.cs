@@ -1,13 +1,15 @@
 using UnityEngine;
-
+/* On scene tavern object, alows hero
+ * to enter the tavern */
 public class EnterTavern : MonoBehaviour
 {
+    // Variables and references
     public Transform tavernZone;
     public Canvas tavernText;
     public Canvas tavernCanvas;
     private bool isInside = false;
     public LayerMask heroLayer;
-
+    // Update is called once per frame
     void Update()
     {
 
@@ -30,7 +32,7 @@ public class EnterTavern : MonoBehaviour
             }
         }
     }
-
+    // Enter tavern and make enter sign visible
     private void EnterTheTavern()
     {
         if (tavernCanvas != null)
@@ -39,6 +41,7 @@ public class EnterTavern : MonoBehaviour
             tavernCanvas.gameObject.SetActive(true);
         }
     }
+    // Leave tavern
     private void QuitTavern()
     {
         if (tavernCanvas != null)
@@ -47,7 +50,7 @@ public class EnterTavern : MonoBehaviour
             tavernCanvas.gameObject.SetActive(false);
         }
     }
-
+    // draw enter tavern zone in etitor
     private void OnDrawGizmosSelected()
     {
         if (tavernZone == null)

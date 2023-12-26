@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-
+/* Single item */
 public class Item : MonoBehaviour
 {
+    // References
     public InventoryBase invBase;
-
     private TextMeshProUGUI itemName;
     private SpriteRenderer ItemSprite;
 
     public int ItemIndex = 0; // Indexes are shown in InventoryBase.cs
-
+    // Awake is called at the begining
     private void Awake()
     {
         try
@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
             Debug.Log("Index out");
         }
     }
-
+    // Update is called once per frame
     private void Update()
     {
         itemName.text = invBase.texts[ItemIndex];
@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
         }
         catch { }
     }
-
+    // Use current item after activation
     public void UseCurrentItem()
     {
         if (ItemIndex != 0)

@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Goblin, simple enemy*/
 public class GoblinScript : Enemy
 {
+    //Constructor
     public GoblinScript()
     {
         speed = 4.0f;
@@ -15,10 +18,8 @@ public class GoblinScript : Enemy
     // Update is called once per frame
     void Update()
     {
-
         animator.SetBool("Move", true);
         CasualEnemy();
-
         if (!isAlive)
             animator.SetBool("Dead", true);
     }

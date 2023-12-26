@@ -1,35 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* 
+ * Third Boss, follows the player and attacks on short range.
+ * Enemy can jump and empower his assets if his health is low
+ */
 public class EvilHero : Enemy
 {
-
-    //public RockSpawner spawner;
-    public bool isFighting = false;
+    // References
     public GameObject barricade;
     public GameObject Closingbarricade;
+    // Variables
+    public bool isFighting = false;
     private bool isRemoving = false;
     private bool closingGate = false;
+    private bool startedChasing = false;
+    private bool empowered = false;
+    private bool afterDialog = false;
     private float jumpCooldown = 0;
-    private bool canJump = true;
     private float jumpForce = 10;
     public string[] plotStory;
+    // Events and delegates
     public delegate void ChangeTrack(int index = 7);
     public static event ChangeTrack ChangeMusic;
     public delegate void RestoreTrack();
     public static event RestoreTrack RestoreMusic;
-
-    private bool startedChasing = false;
-    private bool empowered = false;
-    private bool afterDialog = false;
-
-    public ParticleSystem toxic;
-
-    public AudioSource toxicSound;
-
     public delegate void DisplayTextDelegate(string[] text, float displayDuration, float afterDelay);
     public static event DisplayTextDelegate OnDisplayText;
+    // Components
+    public ParticleSystem toxic;
+    public AudioSource toxicSound;
 
+
+    // Constructor
     public EvilHero()
     {
         speed = 2.0f;
@@ -40,6 +43,7 @@ public class EvilHero : Enemy
         canJump = true;
         isBoss = true;
     }
+    // Start is called on scene load
     private void Start()
     {
         body2d = GetComponent<Rigidbody2D>();
@@ -48,24 +52,21 @@ public class EvilHero : Enemy
         toxicSound = transform.GetComponent<AudioSource>();
         StartCoroutine(CheckForPlayerCoroutine());
     }
+    // Update is called once per frame
     void Update()
     {
-        //animator.SetBool("Move", true);
         if (afterDialog)
             SmartEnemy();
-
         if (jumpCooldown > 0)
         {
             jumpCooldown -= Time.deltaTime;
         }
-
         if (!isAlive)
         {
             if (!isRemoving)
                 StartCoroutine(RemoveBarricade());
             animator.SetBool("Dead", true);
         }
-
         if (isChasing && !startedChasing)
         {
             startedChasing = true;
@@ -74,7 +75,6 @@ public class EvilHero : Enemy
             SensorRadius = 25;
             gameObject.tag = "Enemy";
         }
-
         if (health <= 20 && !empowered)
         {
             empowered = true;
@@ -85,7 +85,7 @@ public class EvilHero : Enemy
             toxic.Play();
         }
     }
-
+    // Removing barricade to leave the battlefield
     private IEnumerator RemoveBarricade()
     {
         isRemoving = true;
@@ -100,7 +100,7 @@ public class EvilHero : Enemy
         }
 
     }
-
+    // Closing the gate that prevents from escaping the battle 
     private IEnumerator CloseGate()
     {
         ChangeMusic(7);
@@ -114,7 +114,7 @@ public class EvilHero : Enemy
             }
         }
     }
-
+    // Check if player is above, if so, perform jump
     private IEnumerator CheckPlayerAbove()
     {
         while (true)
@@ -125,7 +125,6 @@ public class EvilHero : Enemy
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null && transform.position.y < player.transform.position.y && canJump)
             {
-                //animator.SetBool("Jump", true);
                 jump();
                 canJump = false;
                 StartCoroutine(ResetJumpCooldown());
@@ -138,13 +137,13 @@ public class EvilHero : Enemy
 
         }
     }
-
+    // Reset jump cooldown to prevent jumping to often
     private IEnumerator ResetJumpCooldown()
     {
         yield return new WaitForSeconds(3f);
         canJump = true;
     }
-
+    // Perform jump
     private void jump()
     {
         if (jumpCooldown <= 0)
@@ -154,26 +153,21 @@ public class EvilHero : Enemy
             jumpCooldown = 3f;
         }
     }
-
+    // Check if player is near, if so, do some dialog functions
     IEnumerator CheckForPlayerCoroutine()
     {
         while (true)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
             if (playerObject != null)
             {
                 float distanceToPlayer = Vector2.Distance(transform.position, playerObject.transform.position);
-
                 if (distanceToPlayer <= 5f)
                 {
                     OnDisplayText.Invoke(plotStory, 10, 1);
-
                     Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
                     playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-
                     yield return new WaitForSeconds(41);
-
                     playerRigidbody.constraints = RigidbodyConstraints2D.None;
                     playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     afterDialog = true;
@@ -183,5 +177,4 @@ public class EvilHero : Enemy
             yield return new WaitForSeconds(0.2f);
         }
     }
-
 }

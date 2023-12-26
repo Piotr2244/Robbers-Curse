@@ -4,11 +4,11 @@ using Unity.VisualScripting;
 using System.Linq;
 using Unity.Mathematics;
 using System;
-using static Hero;
-
+/* Player class, stores all statistics and a lot of methods
+ * that keeps the player functionalities working. */
 public class Hero : MonoBehaviour
 {
-
+    // Main variables
     public float speed = 4.0f;
     public float jumpForce = 9f;
     public float Maxhealth = 20.0f;
@@ -19,22 +19,23 @@ public class Hero : MonoBehaviour
     public float damage = 2.0f;
     public float attackRange = 0.5f;
     public float gold = 0;
-
     public float manaRegen = 1;
     public float HpRegen = 0;
 
+    // Some other variables
     private bool grounded = false;
     private bool combatIdle = false;
     private bool isAttacking = false;
     private bool isDead = false;
 
+    // References
     public Transform attackPoint;
     private Animator animator;
     private Rigidbody2D body2d;
     private Sensor_Bandit groundSensor;
     public LayerMask enemyLayers;
 
-    ////// SPELLS //////
+    // Spells
     public bool[] spellLearned = Enumerable.Repeat(false, 5).ToArray();// true means hero knows this spell
     public int spellIndex = 0;
     public GameObject fireballPrefab; //INDEX 1
@@ -44,23 +45,23 @@ public class Hero : MonoBehaviour
     public GameObject DeathSpell; //INDEX 4
     public GameObject FireRain; //INDEX 5
 
-    //particles:
+    // Particles:
     public ParticleSystem blood;
     public ParticleSystem toxicSplash;
 
-    //current hero state
+    // Current hero state
     private SingleState CurrentState;
 
-    //State delegate
+    // State delegate
     public delegate void SendStateUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0);
     public static event SendStateUpdate UpdateState;
 
-    //temp values
+    // Temp values
     private bool ToxicBoostActive = false;
     private float SpellOverloadCountdown = 0.0f;
     private bool isReturningToLive = false;
 
-    //sounds
+    // Sounds
     public AudioSource audioSrc;
     public AudioClip MeleeSound;
     public AudioClip FireBallSound;
@@ -74,6 +75,7 @@ public class Hero : MonoBehaviour
     //LOADING STATS FROM ANOTHER SCENE
     public bool LoadFromPrev = false;
     public HeroStatus heroStatus;
+    // Load hero statistics from previous scene
     private void LoadStats()
     {
         if (LoadFromPrev)
@@ -84,12 +86,10 @@ public class Hero : MonoBehaviour
                 if (statusHolder != null)
                 {
                     heroStatus = statusHolder.GetComponent<HeroStatus>();
-
                     if (heroStatus.speed == 0)
                     {
                         continue;
                     }
-
                     speed = heroStatus.speed;
                     jumpForce = heroStatus.jumpForce;
                     Maxhealth = heroStatus.Maxhealth;
@@ -103,6 +103,7 @@ public class Hero : MonoBehaviour
                     attackRange = heroStatus.attackRange;
                     gold = heroStatus.gold;
                     spellLearned = heroStatus.spellLearned;
+                    StartCoroutine(destroyHolder(statusHolder));
                     break;
                 }
                 else
@@ -113,15 +114,22 @@ public class Hero : MonoBehaviour
 
         }
     }
+
+    private IEnumerator destroyHolder(GameObject objectToDestroy)
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(objectToDestroy);
+    }
+    // Awake is call at the beginning 
     private void Awake()
     {
         SingleState.ChangeState += GetStateAtributes;
         SingleState.UndoState += UndoStateAtributes;
         Coin.OnItemCollision += CollectGold;
-        //DontDestroyOnLoad(gameObject);
         LoadStats();
 
     }
+    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -151,8 +159,6 @@ public class Hero : MonoBehaviour
                 isDead = true;
                 FinalDeath();
             }
-
-
         }
         else
         {
@@ -163,9 +169,8 @@ public class Hero : MonoBehaviour
             changeSpell();
             ToxicBoost();
         }
-
     }
-
+    // Ground landing hero, this method was made by hero original prefab author
     private void groundHero()
     {
         //Check if character just landed on the ground
@@ -183,6 +188,7 @@ public class Hero : MonoBehaviour
             animator.SetBool("Grounded", grounded);
         }
     }
+    // Move hero, this method is partly made by hero original prefab author
     private void moveHero()
     {
         // -- Handle input and movement --
@@ -216,9 +222,8 @@ public class Hero : MonoBehaviour
                 damage += 1.0f;
                 jumpForce -= 1.5f;
             }
-            UpdateState.Invoke(1, 0.5f, 5);
+            UpdateState.Invoke(1, 0.8f, 5);
         }
-
         //Jump
         else if (Input.GetKeyDown("space") && grounded)
         {
@@ -231,24 +236,19 @@ public class Hero : MonoBehaviour
             groundSensor.Disable(0.2f);
             UpdateState.Invoke(1, 0.05f, 2);
         }
-
         //Run
         else if (Mathf.Abs(inputX) > Mathf.Epsilon)
         {
             animator.SetInteger("AnimState", 2);
-            //audioSrc.clip = stepSound;
-            //audioSrc.Play();
         }
-
         //Combat Idle
         else if (combatIdle)
             animator.SetInteger("AnimState", 1);
-
         //Idle
         else
             animator.SetInteger("AnimState", 0);
     }
-
+    // Use melee attack
     private void meleeAttack()
     {
         if (Input.GetMouseButtonDown(0) && !isAttacking)
@@ -257,7 +257,7 @@ public class Hero : MonoBehaviour
             StartCoroutine(MeleeAttackCoroutine());
         }
     }
-
+    // Health and mana gegeneration coroutine
     private IEnumerator Regeneration()
     {
         int secondCounter = 0;
@@ -278,7 +278,7 @@ public class Hero : MonoBehaviour
                 SpellOverloadCountdown -= 1;
         }
     }
-
+    // Coroutine making melee attack and damaging enemies
     private IEnumerator MeleeAttackCoroutine()
     {
         isAttacking = true;
@@ -287,16 +287,15 @@ public class Hero : MonoBehaviour
         audioSrc.clip = MeleeSound;
         audioSrc.Play();
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
         foreach (Collider2D enemy in HitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(damage);
             UpdateState.Invoke(1, 0.05f, 2);
-
         }
         UpdateState.Invoke(1, 0.01f, 2);
         isAttacking = false;
     }
+    // Change spell to another known one
     private void changeSpell()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -318,6 +317,7 @@ public class Hero : MonoBehaviour
                 spellIndex = 0;
         }
     }
+    // empower hero with special boost
     private void ToxicBoost()
     {
         if (Input.GetKeyDown(KeyCode.R) && ToxicBoostActive == false)
@@ -328,6 +328,7 @@ public class Hero : MonoBehaviour
             StartCoroutine(ToxicBoostCorutine());
         }
     }
+    // use a chosen magic attack to use the spell
     public void MagicAttack()
     {
         if (Input.GetMouseButtonDown(1))
@@ -433,7 +434,7 @@ public class Hero : MonoBehaviour
             }
         }
     }
-
+    // Modify atributes dependong on new hero state
     public void GetStateAtributes(SingleState state)
     {
         CurrentState = state;
@@ -443,6 +444,7 @@ public class Hero : MonoBehaviour
         HpRegen += CurrentState.hpRegen;
         manaRegen += CurrentState.ManaRegen;
     }
+    // Undo current hero state, it os called before updating a new state
     public void UndoStateAtributes()
     {
         if (CurrentState == null)
@@ -453,17 +455,20 @@ public class Hero : MonoBehaviour
         HpRegen -= CurrentState.hpRegen;
         manaRegen -= CurrentState.ManaRegen;
     }
+    // Display hero range attack on editor
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    // Get damage 
     public void TakeDamage(float damage)
     {
         health -= damage;
         blood.Play();
         UpdateState.Invoke(2, 1f);
+        UpdateState.Invoke(1, 0.1f);
     }
 
     private void OnDisable()
@@ -472,7 +477,7 @@ public class Hero : MonoBehaviour
         SingleState.UndoState -= UndoStateAtributes;
         Coin.OnItemCollision -= CollectGold;
     }
-
+    // Simulate toxic boost, empower hero and undo it after some time
     private IEnumerator ToxicBoostCorutine()
     {
         audioSrc.clip = FireCloakSound;
@@ -498,7 +503,7 @@ public class Hero : MonoBehaviour
         audioSrc.Play();
 
     }
-
+    // After losing all health, simulate returning to life
     private IEnumerator ReturnToLive()
     {
         yield return new WaitForSeconds(3);
@@ -517,7 +522,7 @@ public class Hero : MonoBehaviour
         UpdateState.Invoke(3, 1, 30);
 
     }
-
+    // After having max toxic level, kill hero and end game
     private void FinalDeath()
     {
         GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
@@ -541,7 +546,7 @@ public class Hero : MonoBehaviour
             Instantiate(DeathSpell, playerPosition, Quaternion.identity);
         }
     }
-
+    // Harm player if his toxic level is full
     private IEnumerator FullToxineLevelHandler()
     {
         while (true)
@@ -554,6 +559,7 @@ public class Hero : MonoBehaviour
             }
         }
     }
+    // Increase toxic level if hero uses spells to often
     private void SpellOverloadController(float time)
     {
         if (SpellOverloadCountdown > 0)
@@ -568,12 +574,13 @@ public class Hero : MonoBehaviour
         }
         SpellOverloadCountdown += time;
     }
-
+    // Increase gold
     private void CollectGold(Coin coin)
     {
         gold += coin.value;
         Destroy(coin.gameObject);
     }
+    // Prevents hero from getting to low statistics
     private IEnumerator CheckMinusStats()
     {
         while (true)
@@ -586,9 +593,8 @@ public class Hero : MonoBehaviour
                 jumpForce = 0.5f;
             yield return new WaitForSeconds(1.0f);
         }
-
     }
-
+    // Cooldown on fire cloak spell
     private IEnumerator FireCloakCooldown()
     {
         FireCloakOn = true;

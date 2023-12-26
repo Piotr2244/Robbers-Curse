@@ -2,26 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/* Hero state controller, listens to game objects and
+ * recieves info about status changing. Controlls hero
+ * statistics depending on current state */
 public class HeroStateControl : MonoBehaviour
 {
-
+    // Variables
     public int currentFatigue = 1;
     public int currentInjuries = 1;
     public int currentSickness = 1;
     public float FatigueOverload = 0;
     public float InjuriesOverload = 0;
     public float SicknessOverload = 0;
-
     private List<SingleState> States = new List<SingleState>();
+    // References
     private SingleState CurrentState;
-
     private Image DisplayImage;
     private Text DisplayText;
 
     //LOADING STATS FROM ANOTHER SCENE
     public bool LoadFromPrev = false;
     public HeroStatus heroStatus;
+    //Load current state info from previous scene
     private void LoadStats()
     {
         if (LoadFromPrev)
@@ -36,7 +38,7 @@ public class HeroStateControl : MonoBehaviour
             }
         }
     }
-
+    // Start is called on scene load
     private void Start()
     {
         LoadStats();
@@ -48,6 +50,7 @@ public class HeroStateControl : MonoBehaviour
         StartCoroutine(OverloadController());
 
     }
+    // Force request to set state variables
     private void ForceSetAtributes(int newFatigue, int newInjuries, int newSickness, int mode)// mode1 = set, mode2 = ++, mode3 = --;
     {
         if (mode == 1)
@@ -82,12 +85,14 @@ public class HeroStateControl : MonoBehaviour
         }
         UpdateCurrentState();
     }
+    // After awake actions 
     private void Awake()
     {
         Hero.UpdateState += RequestAtributesUpdate;
         TavernController.UpdateState += ForceSetAtributes;
         Enemy.UpdateState += RequestAtributesUpdate;
     }
+    // Check if current state overloading is done, if so, change state variable
     private IEnumerator OverloadController()
     {
         while (true)
@@ -134,10 +139,12 @@ public class HeroStateControl : MonoBehaviour
             }
         }
     }
+    // Request atribute update with a proper parameters
     private void RequestAtributesUpdate(int AtributeIndex, float ChangeValue, float DelayValue = 0) //Fatigue = 1, Injuries = 2, Sickness = 3
     {
         StartCoroutine(StartUpdating(AtributeIndex, ChangeValue, DelayValue));
     }
+    // Update state variable
     private IEnumerator StartUpdating(int AtributeIndex, float ChangeValue, float DelayValue)
     {
         yield return new WaitForSeconds(DelayValue);
@@ -148,6 +155,7 @@ public class HeroStateControl : MonoBehaviour
         else if (AtributeIndex == 3)
             SicknessOverload += ChangeValue;
     }
+    // Calculate the nearest state and change the current state
     private void UpdateCurrentState()
     {
         SingleState TempSingleState = new SingleState();
@@ -171,6 +179,7 @@ public class HeroStateControl : MonoBehaviour
         CurrentState.UseActiveState();
         UpdateDisplay();
     }
+    // Update state UI element
     private void UpdateDisplay()
     {
         DisplayImage.color = new Color(currentFatigue * 0.01f, (100 - currentInjuries) * 0.01f, currentSickness * 0.01f);
@@ -178,6 +187,7 @@ public class HeroStateControl : MonoBehaviour
             DisplayImage.color = new Color(0.5f, (100 - currentInjuries) * 0.01f, currentSickness * 0.01f);
         DisplayText.text = CurrentState.StateName;
     }
+    // Bling on state UI element
     private IEnumerator ColorBlink(int index) // 1- red, 2 - yellow, 3 - blue
     {
         Color SavedColor = DisplayImage.color;
@@ -190,6 +200,7 @@ public class HeroStateControl : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         DisplayImage.color = SavedColor;
     }
+    // Creates all available states
     private void createStates()
     {
         SingleState tempState;
@@ -246,7 +257,7 @@ public class HeroStateControl : MonoBehaviour
         tempState = new SingleState("Doomed", 100, 100, 100, 5, 5, 5, 2, -3);
         States.Add(tempState);
     }
-
+    // On disable actions
     private void OnDisable()
     {
         Hero.UpdateState -= RequestAtributesUpdate;
