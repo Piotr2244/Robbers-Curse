@@ -33,7 +33,7 @@ public class WizardBoss : Enemy
     {
         speed = 2.0f;
         attackRange = 1.3f;
-        health = 100.0f;
+        health = 200.0f;
         attackSpeed = 0.2f;
         damage = 0.5f;
     }
